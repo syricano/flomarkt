@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% trans block title %}{% trans block auth_page_title %}{% endblock %}{% endblock %}
 
 {% block content %}
 <section class="container py-4 auth-wrap">
@@ -14,14 +13,14 @@
             <i class="bi bi-shield-lock" aria-hidden="true" style="font-size:1.5rem;"></i>
           {% endblock %}
 
-          <h1 class="h6 mb-2">{% trans block auth_title %}{% trans "Account" %}{% endblock %}</h1>
+          <h1 class="h6 mb-2">{%  block auth_title %}{% trans "Account" %}{% endblock %}</h1>
 
           {% block auth_description %}
             <p class="text-muted small mb-3">{% trans "Please proceed to continue." %}</p>
           {% endblock %}
 
-          {% trans block auth_body %}{% endblock %}
-          {% trans block auth_social %}{% endblock %}
+          {%  block auth_body %}{% endblock %}
+          {%  block auth_social %}{% endblock %}
 
           {% block auth_fine_print %}
             <p class="mt-3 mb-0 text-muted small">
