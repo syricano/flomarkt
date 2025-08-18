@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 01:06+0200\n"
+"POT-Creation-Date: 2025-08-18 13:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgstr "Beginnen Sie hier einkaufen"
 msgid "Shop Now"
 msgstr "Jetzt einkaufen"
 
-#: .\home\templates\home\privacy.html:6 .\templates\allauth\base.html:31
+#: .\home\templates\home\privacy.html:6 .\templates\allauth\base.html:30
 msgid "Privacy Policy"
 msgstr "Privatsphäre"
 
@@ -68,8 +68,6 @@ msgstr ""
 "bevor Sie unseren Service nutzen."
 
 #: .\profiles\models.py:11
-#, fuzzy
-#| msgid "Username"
 msgid "User"
 msgstr "Benutzername"
 
@@ -78,8 +76,6 @@ msgid "First name"
 msgstr "Vorname"
 
 #: .\profiles\models.py:13
-#, fuzzy
-#| msgid "Last seen at"
 msgid "Last name"
 msgstr "Zuletzt gesehen bei"
 
@@ -100,20 +96,14 @@ msgid "Town or city"
 msgstr "Stadt oder Stadt"
 
 #: .\profiles\models.py:19
-#, fuzzy
-#| msgid "Update Address"
 msgid "Street address 1"
 msgstr "E-Mail-Adresse"
 
 #: .\profiles\models.py:20
-#, fuzzy
-#| msgid "Update Address"
 msgid "Street address 2"
 msgstr "E-Mail-Adresse"
 
 #: .\profiles\models.py:21
-#, fuzzy
-#| msgid "Account"
 msgid "County"
 msgstr "Mein Konto"
 
@@ -182,6 +172,10 @@ msgstr "E-Mail-Adresse"
 #: .\profiles\templates\profiles\profile.html:110
 msgid "Order History"
 msgstr "Bestellungen"
+
+#: .\profiles\templates\profiles\profile.html:119
+msgid "You have not placed any orders yet"
+msgstr "Sie haben noch keine Bestellungen erteilt"
 
 #: .\templates\allauth\account\account_inactive.html:5
 #: .\templates\allauth\account\account_inactive.html:9
@@ -349,26 +343,20 @@ msgstr "Möchten Sie die ausgewählte E -Mail -Adresse wirklich entfernen?"
 #: .\templates\allauth\account\email\account_already_exists_message.txt:4
 #, python-format
 msgid ""
-"You are receiving this email because you or someone else tried to signup for "
-"an\n"
+"You are receiving this email because you or someone else tried to signup for an\n"
 "account using email address:\n"
 "\n"
 "%(email)s\n"
 "\n"
-"However, an account using that email address already exists.  In case you "
-"have\n"
-"forgotten about this, please use the password forgotten procedure to "
-"recover\n"
+"However, an account using that email address already exists.  In case you have\n"
+"forgotten about this, please use the password forgotten procedure to recover\n"
 "your account:\n"
 "\n"
 "%(password_reset_url)s"
 msgstr ""
-"Sie erhalten diese E -Mail, weil Sie oder jemand anderes versucht haben, "
-"sich für eine anzumelden\n"
-"Konto über E -Mail -Adresse:%(email)sEs gibt jedoch bereits ein Konto, das "
-"diese E -Mail -Adresse verwendet.  Falls Sie haben\n"
-"Vergessen dies, bitte verwenden Sie das Passwort vergessene Prozedur, um "
-"sich wiederherzustellen\n"
+"Sie erhalten diese E -Mail, weil Sie oder jemand anderes versucht haben, sich für eine anzumelden\n"
+"Konto über E -Mail -Adresse:%(email)sEs gibt jedoch bereits ein Konto, das diese E -Mail -Adresse verwendet.  Falls Sie haben\n"
+"Vergessen dies, bitte verwenden Sie das Passwort vergessene Prozedur, um sich wiederherzustellen\n"
 "Ihr Konto:%(password_reset_url)s"
 
 #: .\templates\allauth\account\email\account_already_exists_subject.txt:3
@@ -400,15 +388,13 @@ msgstr ""
 #: .\templates\allauth\account\email\base_notification.txt:10
 #, python-format
 msgid ""
-"If you do not recognize this change then please take proper security "
-"precautions immediately. The change to your account originates from:\n"
+"If you do not recognize this change then please take proper security precautions immediately. The change to your account originates from:\n"
 "\n"
 "- IP address: %(ip)s\n"
 "- Browser: %(user_agent)s\n"
 "- Date: %(timestamp)s"
 msgstr ""
-"Wenn Sie diese Änderung nicht erkennen, treffen Sie bitte sofort die "
-"richtigen Sicherheitsvorkehrungen. Die Änderung Ihres Kontos stammt aus:\n"
+"Wenn Sie diese Änderung nicht erkennen, treffen Sie bitte sofort die richtigen Sicherheitsvorkehrungen. Die Änderung Ihres Kontos stammt aus:\n"
 "\n"
 "- IP -Adresse:%(ip)s- Browser:%(user_agent)s- Datum:%(timestamp)s"
 
@@ -506,15 +492,11 @@ msgstr "Passwort Reset Code"
 
 #: .\templates\allauth\account\email\password_reset_key_message.txt:4
 msgid ""
-"You're receiving this email because you or someone else has requested a "
-"password reset for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the "
-"link below to reset your password."
+"You're receiving this email because you or someone else has requested a password reset for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
 msgstr ""
-"Sie erhalten diese E -Mail, da Sie oder jemand anderes ein Kennwortreset für "
-"Ihr Benutzerkonto angefordert haben.\n"
-"Es kann sicher ignoriert werden, wenn Sie keinen Passwort zurücksetzen. "
-"Klicken Sie auf den Link unten, um Ihr Passwort zurückzusetzen."
+"Sie erhalten diese E -Mail, da Sie oder jemand anderes ein Kennwortreset für Ihr Benutzerkonto angefordert haben.\n"
+"Es kann sicher ignoriert werden, wenn Sie keinen Passwort zurücksetzen. Klicken Sie auf den Link unten, um Ihr Passwort zurückzusetzen."
 
 #: .\templates\allauth\account\email\password_reset_key_message.txt:9
 #, python-format
@@ -544,8 +526,8 @@ msgid ""
 "an account with email %(email)s. However, we do not have any record of such "
 "an account in our database."
 msgstr ""
-"Sie erhalten diese E -Mail, weil Sie oder jemand anderes versucht haben, mit "
-"E -Mail auf ein Konto zuzugreifen%(email)s. Wir haben jedoch keine "
+"Sie erhalten diese E -Mail, weil Sie oder jemand anderes versucht haben, mit"
+" E -Mail auf ein Konto zuzugreifen%(email)s. Wir haben jedoch keine "
 "Aufzeichnung eines solchen Kontos in unserer Datenbank."
 
 #: .\templates\allauth\account\email\unknown_account_message.txt:8
@@ -621,8 +603,8 @@ msgid ""
 "href=\"%(email_url)s\">issue a new email confirmation request</a>."
 msgstr ""
 "Dieser E -Mail -Bestätigungslink ist abgelaufen oder ist ungültig. Bitte <a "
-"href = \"%(email_url)s\"> Ausgeben eine neue E -Mail -Bestätigungsanfrage </"
-"a>."
+"href = \"%(email_url)s\"> Ausgeben eine neue E -Mail -Bestätigungsanfrage "
+"</a>."
 
 #: .\templates\allauth\account\login.html:8
 msgid "Use your email and password or sign in with a social account."
@@ -749,11 +731,11 @@ msgstr "Schlechtes Token"
 #, python-format
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
-"a>."
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
+"reset</a>."
 msgstr ""
-"Der Link zum Zurücksetzen des Kennworts war ungültig, möglicherweise weil er "
-"bereits verwendet wurde.  Bitte fordern Sie ein <a href = "
+"Der Link zum Zurücksetzen des Kennworts war ungültig, möglicherweise weil er"
+" bereits verwendet wurde.  Bitte fordern Sie ein <a href = "
 "\"%(passwd_reset_url)s\"> Neues Passwort Reset </a>."
 
 #: .\templates\allauth\account\password_reset_from_key_done.html:12
@@ -886,12 +868,12 @@ msgstr "Warnung:"
 
 #: .\templates\allauth\account\snippets\warn_no_email.html:3
 msgid ""
-"You currently do not have any email address set up. You should really add an "
-"email address so you can receive notifications, reset your password, etc."
+"You currently do not have any email address set up. You should really add an"
+" email address so you can receive notifications, reset your password, etc."
 msgstr ""
 "Sie haben derzeit keine E -Mail -Adresse eingerichtet. Sie sollten wirklich "
-"eine E -Mail -Adresse hinzufügen, damit Sie Benachrichtigungen erhalten, Ihr "
-"Passwort zurücksetzen können."
+"eine E -Mail -Adresse hinzufügen, damit Sie Benachrichtigungen erhalten, Ihr"
+" Passwort zurücksetzen können."
 
 #: .\templates\allauth\account\verification_sent.html:5
 #: .\templates\allauth\account\verification_sent.html:9
@@ -908,8 +890,8 @@ msgid ""
 "receive the verification email within a few minutes."
 msgstr ""
 "Wir haben Ihnen eine E -Mail zur Überprüfung gesendet. Befolgen Sie den "
-"Link, der bereitgestellt wurde, um den Anmeldungsprozess abzuschließen. Wenn "
-"Sie die Überprüfungs -E -Mail in Ihrem Haupt -Posteingang nicht sehen, "
+"Link, der bereitgestellt wurde, um den Anmeldungsprozess abzuschließen. Wenn"
+" Sie die Überprüfungs -E -Mail in Ihrem Haupt -Posteingang nicht sehen, "
 "überprüfen Sie Ihren Spam -Ordner. Bitte kontaktieren Sie uns, wenn Sie die "
 "Überprüfungs -E -Mail nicht innerhalb weniger Minuten erhalten."
 
@@ -926,15 +908,11 @@ msgstr ""
 #: .\templates\allauth\account\verified_email_required.html:18
 msgid ""
 "We have sent an email to you for\n"
-"verification. Please click on the link inside that email. If you do not see "
-"the verification email in your main inbox, check your spam folder. "
-"Otherwise\n"
+"verification. Please click on the link inside that email. If you do not see the verification email in your main inbox, check your spam folder. Otherwise\n"
 "contact us if you do not receive it within a few minutes."
 msgstr ""
 "Wir haben Ihnen eine E -Mail gesendet\n"
-"Überprüfung. Bitte klicken Sie in dieser E -Mail auf den Link. Wenn Sie die "
-"Überprüfungs -E -Mail in Ihrem Haupt -Posteingang nicht sehen, überprüfen "
-"Sie Ihren Spam -Ordner. Ansonsten\n"
+"Überprüfung. Bitte klicken Sie in dieser E -Mail auf den Link. Wenn Sie die Überprüfungs -E -Mail in Ihrem Haupt -Posteingang nicht sehen, überprüfen Sie Ihren Spam -Ordner. Ansonsten\n"
 "Kontaktieren Sie uns, wenn Sie es nicht innerhalb weniger Minuten erhalten."
 
 #: .\templates\allauth\account\verified_email_required.html:23
@@ -972,23 +950,23 @@ msgstr "Zwei-Faktor-Authentifizierung"
 msgid "Sessions"
 msgstr "Sitzungen"
 
-#: .\templates\allauth\base.html:17
+#: .\templates\allauth\base.html:16
 msgid "Account"
 msgstr "Mein Konto"
 
-#: .\templates\allauth\base.html:20
+#: .\templates\allauth\base.html:19
 msgid "Please proceed to continue."
 msgstr "Bitte fahren Sie fort, um weiterzumachen."
 
-#: .\templates\allauth\base.html:28
+#: .\templates\allauth\base.html:27
 msgid "By continuing you agree to our"
 msgstr "Wenn Sie fortfahren, stimmen Sie unserem zu"
 
-#: .\templates\allauth\base.html:29 .\templates\includes\footer.html:21
+#: .\templates\allauth\base.html:28 .\templates\includes\footer.html:21
 msgid "Terms"
 msgstr "Bedingungen"
 
-#: .\templates\allauth\base.html:30
+#: .\templates\allauth\base.html:29
 msgid "and"
 msgstr "Und"
 
@@ -1071,8 +1049,8 @@ msgid ""
 "Your account is protected by two-factor authentication. Please enter an "
 "authenticator code:"
 msgstr ""
-"Ihr Konto ist durch die Zwei-Faktor-Authentifizierung geschützt. Bitte geben "
-"Sie einen Authentikatorcode ein:"
+"Ihr Konto ist durch die Zwei-Faktor-Authentifizierung geschützt. Bitte geben"
+" Sie einen Authentikatorcode ein:"
 
 #: .\templates\allauth\mfa\authenticate.html:41
 #: .\templates\allauth\mfa\webauthn\reauthenticate.html:15
@@ -1228,7 +1206,8 @@ msgid "Enter an authenticator code:"
 msgstr "Geben Sie den E -Mail -Überprüfungscode ein"
 
 #: .\templates\allauth\mfa\recovery_codes\generate.html:9
-msgid "You are about to generate a new set of recovery codes for your account."
+msgid ""
+"You are about to generate a new set of recovery codes for your account."
 msgstr ""
 "Sie sind kurz davor, einen neuen Satz von Wiederherstellungscodes für Ihr "
 "Konto zu generieren."
@@ -1382,8 +1361,8 @@ msgid ""
 "additional keys later on, you can use a descriptive name to tell the keys "
 "apart."
 msgstr ""
-"Sie sind kurz davor, einen Passkey für Ihr Konto zu erstellen. Da Sie später "
-"zusätzliche Schlüssel hinzufügen können, können Sie einen beschreibenden "
+"Sie sind kurz davor, einen Passkey für Ihr Konto zu erstellen. Da Sie später"
+" zusätzliche Schlüssel hinzufügen können, können Sie einen beschreibenden "
 "Namen verwenden, um die Schlüssel auseinander zu untersuchen."
 
 #: .\templates\allauth\mfa\webauthn\signup_form.html:21
@@ -1442,7 +1421,8 @@ msgid ""
 "A third-party account from %(provider)s has been disconnected from your "
 "account."
 msgstr ""
-"Ein Account von Drittanbietern von%(provider)swurde von Ihrem Konto getrennt."
+"Ein Account von Drittanbietern von%(provider)swurde von Ihrem Konto "
+"getrennt."
 
 #: .\templates\allauth\socialaccount\email\account_disconnected_subject.txt:3
 msgid "Third-Party Account Disconnected"
@@ -1461,7 +1441,8 @@ msgstr ""
 
 #: .\templates\allauth\socialaccount\login.html:15
 #, python-format
-msgid "You are about to sign in using a third-party account from %(provider)s."
+msgid ""
+"You are about to sign in using a third-party account from %(provider)s."
 msgstr "Sie sind dabei%(provider)s."
 
 #: .\templates\allauth\socialaccount\login_cancelled.html:5
@@ -1501,15 +1482,12 @@ msgstr "Dein Profil"
 #, python-format
 msgid ""
 "\n"
-"      You are about to use your %(provider_name)s account to login to "
-"%(site_name)s.\n"
+"      You are about to use your %(provider_name)s account to login to %(site_name)s.\n"
 "      As a final step, please complete the following form:\n"
 "    "
 msgstr ""
 "\n"
-"Sie sind kurz davor, Ihre zu verwenden%(provider_name)sKonto "
-"anmelden%(site_name)s. Bitte füllen Sie als letzter Schritt das folgende "
-"Formular aus:"
+"Sie sind kurz davor, Ihre zu verwenden%(provider_name)sKonto anmelden%(site_name)s. Bitte füllen Sie als letzter Schritt das folgende Formular aus:"
 
 #: .\templates\allauth\socialaccount\signup.html:44
 msgid "Back to Sign In"
@@ -1685,8 +1663,8 @@ msgstr "Suchen Sie unsere Website"
 #~ "If you have not created an account yet, then please %(link)ssign "
 #~ "up%(end_link)s first."
 #~ msgstr ""
-#~ "Wenn Sie noch kein Konto erstellt haben, dann bitte%(link)sMelden Sie "
-#~ "sich an%(end_link)sErste."
+#~ "Wenn Sie noch kein Konto erstellt haben, dann bitte%(link)sMelden Sie sich "
+#~ "an%(end_link)sErste."
 
 #~ msgid "Sign in with a passkey"
 #~ msgstr "Melden Sie sich mit einem Passkey an"

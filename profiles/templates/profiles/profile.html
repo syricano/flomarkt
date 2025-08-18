@@ -108,8 +108,19 @@
     <div>
       <div class="card card-compact shadow-sm orders-equal">
         <div class="card-header"><strong>{% trans "Order History" %}</strong></div>
-        <div class="card-body text-center">
-          {{ orders }}
+        <div class="card-body text-center">          
+          <div class="card-body text-center ">
+            <ul class="list-group text-start">
+              {% for order in orders %}
+                <li class="list-group-item">
+                  <a href="{% url 'order_history' order.order_number %}">{{ order.order_number }}</a>
+                </li>
+              {% empty %}
+                <p class="text-muted small mb-0 text-center">{% trans "You have not placed any orders yet" %}</p>
+              {% endfor %}
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>

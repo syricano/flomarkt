@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 01:06+0200\n"
+"POT-Creation-Date: 2025-08-18 13:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,8 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: .\home\templates\home\about.html:2 .\home\templates\home\about.html:4
 #: .\templates\includes\footer.html:18
@@ -46,14 +45,15 @@ msgstr "ابدأ بالتسوق هنا"
 msgid "Shop Now"
 msgstr "تسوق الآن"
 
-#: .\home\templates\home\privacy.html:6 .\templates\allauth\base.html:31
+#: .\home\templates\home\privacy.html:6 .\templates\allauth\base.html:30
 msgid "Privacy Policy"
 msgstr "الخصوصية"
 
 #: .\home\templates\home\privacy.html:7
 msgid ""
 "Your privacy is important to us. Please read our privacy policy carefully."
-msgstr "خصوصيتك مهمة بالنسبة لنا. يرجى قراءة سياسة الخصوصية الخاصة بنا بعناية."
+msgstr ""
+"خصوصيتك مهمة بالنسبة لنا. يرجى قراءة سياسة الخصوصية الخاصة بنا بعناية."
 
 #: .\home\templates\home\terms.html:7
 msgid "Terms and Conditions"
@@ -65,8 +65,6 @@ msgid ""
 msgstr "يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام خدمتنا."
 
 #: .\profiles\models.py:11
-#, fuzzy
-#| msgid "Username"
 msgid "User"
 msgstr "اسم المستخدم"
 
@@ -75,8 +73,6 @@ msgid "First name"
 msgstr "الاسم الأول"
 
 #: .\profiles\models.py:13
-#, fuzzy
-#| msgid "Last seen at"
 msgid "Last name"
 msgstr "آخر مرة في"
 
@@ -174,6 +170,10 @@ msgstr "تحديث بيانات العنوان"
 msgid "Order History"
 msgstr "الطلبات"
 
+#: .\profiles\templates\profiles\profile.html:119
+msgid "You have not placed any orders yet"
+msgstr "لم تقم بأي طلبات بعد"
+
 #: .\templates\allauth\account\account_inactive.html:5
 #: .\templates\allauth\account\account_inactive.html:9
 msgid "Account Inactive"
@@ -189,7 +189,8 @@ msgid ""
 "We've sent a code to %(recipient)s. The code expires shortly, so please "
 "enter it soon."
 msgstr ""
-"لقد أرسلنا رمزًا إلى%(recipient)s. ينتهي الرمز قريبًا ، لذا يرجى إدخاله قريبًا."
+"لقد أرسلنا رمزًا إلى%(recipient)s. ينتهي الرمز قريبًا ، لذا يرجى إدخاله "
+"قريبًا."
 
 #: .\templates\allauth\account\base_confirm_code.html:39
 #: .\templates\allauth\account\email_confirm.html:24
@@ -339,27 +340,22 @@ msgstr "هل تريد حقًا حذف عنوان البريد الإلكترون
 #: .\templates\allauth\account\email\account_already_exists_message.txt:4
 #, python-format
 msgid ""
-"You are receiving this email because you or someone else tried to signup for "
-"an\n"
+"You are receiving this email because you or someone else tried to signup for an\n"
 "account using email address:\n"
 "\n"
 "%(email)s\n"
 "\n"
-"However, an account using that email address already exists.  In case you "
-"have\n"
-"forgotten about this, please use the password forgotten procedure to "
-"recover\n"
+"However, an account using that email address already exists.  In case you have\n"
+"forgotten about this, please use the password forgotten procedure to recover\n"
 "your account:\n"
 "\n"
 "%(password_reset_url)s"
 msgstr ""
-"تتلقى هذا البريد الإلكتروني لأنك أو شخصًا آخر حاول التسجيل للحصول على حساب "
-"باستخدام عنوان البريد الإلكتروني:\n"
+"تتلقى هذا البريد الإلكتروني لأنك أو شخصًا آخر حاول التسجيل للحصول على حساب باستخدام عنوان البريد الإلكتروني:\n"
 "\n"
 "%(email)s\n"
 "\n"
-"ومع ذلك، يوجد حساب يستخدم هذا البريد الإلكتروني بالفعل. في حال كنت قد نسيت "
-"ذلك، يرجى استخدام إجراء استعادة كلمة المرور لاسترداد حسابك:\n"
+"ومع ذلك، يوجد حساب يستخدم هذا البريد الإلكتروني بالفعل. في حال كنت قد نسيت ذلك، يرجى استخدام إجراء استعادة كلمة المرور لاسترداد حسابك:\n"
 "\n"
 "%(password_reset_url)s"
 
@@ -390,15 +386,13 @@ msgstr "تتلقى هذا البريد لأن التغيير التالي تم �
 #: .\templates\allauth\account\email\base_notification.txt:10
 #, python-format
 msgid ""
-"If you do not recognize this change then please take proper security "
-"precautions immediately. The change to your account originates from:\n"
+"If you do not recognize this change then please take proper security precautions immediately. The change to your account originates from:\n"
 "\n"
 "- IP address: %(ip)s\n"
 "- Browser: %(user_agent)s\n"
 "- Date: %(timestamp)s"
 msgstr ""
-"إذا لم تتعرف على هذا التغيير، فالرجاء اتخاذ الاحتياطات الأمنية المناسبة على "
-"الفور. هذا التغيير في حسابك مصدره:\n"
+"إذا لم تتعرف على هذا التغيير، فالرجاء اتخاذ الاحتياطات الأمنية المناسبة على الفور. هذا التغيير في حسابك مصدره:\n"
 "\n"
 "- عنوان IP: %(ip)s\n"
 "- المتصفح: %(user_agent)s\n"
@@ -427,16 +421,16 @@ msgid ""
 "You're receiving this email because user %(user_display)s has given your "
 "email address to register an account on %(site_domain)s."
 msgstr ""
-"أنت تتلقى هذا البريد الإلكتروني لأن المستخدم%(user_display)sأعطى عنوان بريدك "
-"الإلكتروني لتسجيل حساب على%(site_domain)s."
+"أنت تتلقى هذا البريد الإلكتروني لأن المستخدم%(user_display)sأعطى عنوان بريدك"
+" الإلكتروني لتسجيل حساب على%(site_domain)s."
 
 #: .\templates\allauth\account\email\email_confirmation_message.txt:7
 msgid ""
 "Your email verification code is listed below. Please enter it in your open "
 "browser window."
 msgstr ""
-"رمز التحقق من البريد الإلكتروني الخاص بك مدرج أدناه. الرجاء إدخالها في نافذة "
-"المتصفح المفتوح."
+"رمز التحقق من البريد الإلكتروني الخاص بك مدرج أدناه. الرجاء إدخالها في نافذة"
+" المتصفح المفتوح."
 
 #: .\templates\allauth\account\email\email_confirmation_message.txt:9
 #, python-format
@@ -496,15 +490,11 @@ msgstr "رمز إعادة تعيين كلمة المرور"
 
 #: .\templates\allauth\account\email\password_reset_key_message.txt:4
 msgid ""
-"You're receiving this email because you or someone else has requested a "
-"password reset for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the "
-"link below to reset your password."
+"You're receiving this email because you or someone else has requested a password reset for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
 msgstr ""
-"تتلقى هذا البريد الإلكتروني لأنك أو شخص آخر طلبت إعادة تعيين كلمة المرور "
-"لحساب المستخدم الخاص بك.\n"
-"يمكن تجاهله بأمان إذا لم تطلب إعادة تعيين كلمة المرور. انقر على الرابط أدناه "
-"لإعادة تعيين كلمة المرور الخاصة بك."
+"تتلقى هذا البريد الإلكتروني لأنك أو شخص آخر طلبت إعادة تعيين كلمة المرور لحساب المستخدم الخاص بك.\n"
+"يمكن تجاهله بأمان إذا لم تطلب إعادة تعيين كلمة المرور. انقر على الرابط أدناه لإعادة تعيين كلمة المرور الخاصة بك."
 
 #: .\templates\allauth\account\email\password_reset_key_message.txt:9
 #, python-format
@@ -598,7 +588,8 @@ msgstr ""
 msgid ""
 "Unable to confirm %(email)s because it is already confirmed by a different "
 "account."
-msgstr "غير قادر على التأكيد%(email)sلأنه تم تأكيده بالفعل من خلال حساب مختلف."
+msgstr ""
+"غير قادر على التأكيد%(email)sلأنه تم تأكيده بالفعل من خلال حساب مختلف."
 
 #: .\templates\allauth\account\email_confirm.html:36
 #, python-format
@@ -720,8 +711,8 @@ msgid ""
 "We have sent you an email. If you have not received it please check your "
 "spam folder. Otherwise contact us if you do not receive it in a few minutes."
 msgstr ""
-"لقد أرسلنا لك بريدًا إلكترونيًا. إذا لم تكن قد استلمتها ، فيرجى التحقق من مجلد "
-"البريد العشوائي. وإلا اتصل بنا إذا لم تستلمه في غضون دقائق قليلة."
+"لقد أرسلنا لك بريدًا إلكترونيًا. إذا لم تكن قد استلمتها ، فيرجى التحقق من "
+"مجلد البريد العشوائي. وإلا اتصل بنا إذا لم تستلمه في غضون دقائق قليلة."
 
 #: .\templates\allauth\account\password_reset_from_key.html:10
 msgid "Bad Token"
@@ -731,12 +722,12 @@ msgstr "رمز غير صحيح"
 #, python-format
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
-"a>."
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
+"reset</a>."
 msgstr ""
 "كان رابط إعادة تعيين كلمة المرور غير صالح ، ربما لأنه تم استخدامه بالفعل.  "
-"يرجى طلب <a href = \"%(passwd_reset_url)s\"> إعادة تعيين كلمة المرور الجديدة "
-"</a>."
+"يرجى طلب <a href = \"%(passwd_reset_url)s\"> إعادة تعيين كلمة المرور الجديدة"
+" </a>."
 
 #: .\templates\allauth\account\password_reset_from_key_done.html:12
 msgid "Your password is now changed."
@@ -787,7 +778,7 @@ msgstr "خيارات تسجيل الدخول الأخرى"
 #: .\templates\allauth\account\signup_by_passkey.html:29
 #: .\templates\allauth\allauth\layouts\base.html:74
 msgid "Sign Up"
-msgstr "اشتراك"
+msgstr "إنشاء حساب"
 
 #: .\templates\allauth\account\signup.html:5
 msgid "Create your account"
@@ -824,12 +815,12 @@ msgstr "هل لديك بالفعل حساب؟"
 
 #: .\templates\allauth\account\signup.html:46
 msgid "or sign up with"
-msgstr "أو اشترك مع"
+msgstr "أو إنشاء حساب بواسطة"
 
 #: .\templates\allauth\account\signup_by_passkey.html:4
 #: .\templates\allauth\socialaccount\signup.html:4
 msgid "Signup"
-msgstr "اشتراك"
+msgstr "إنشاء حساب"
 
 #: .\templates\allauth\account\signup_by_passkey.html:8
 msgid "Passkey Sign Up"
@@ -868,8 +859,8 @@ msgstr "تحذير:"
 
 #: .\templates\allauth\account\snippets\warn_no_email.html:3
 msgid ""
-"You currently do not have any email address set up. You should really add an "
-"email address so you can receive notifications, reset your password, etc."
+"You currently do not have any email address set up. You should really add an"
+" email address so you can receive notifications, reset your password, etc."
 msgstr ""
 "ليس لديك حاليًا أي عنوان بريد إلكتروني تم إعداده. يجب عليك حقًا إضافة عنوان "
 "بريد إلكتروني حتى تتمكن من تلقي الإخطارات وإعادة ضبط كلمة المرور الخاصة بك "
@@ -904,14 +895,12 @@ msgstr "هذا القسم للتحقق من الشخصية لذلك يتوجب �
 #: .\templates\allauth\account\verified_email_required.html:18
 msgid ""
 "We have sent an email to you for\n"
-"verification. Please click on the link inside that email. If you do not see "
-"the verification email in your main inbox, check your spam folder. "
-"Otherwise\n"
+"verification. Please click on the link inside that email. If you do not see the verification email in your main inbox, check your spam folder. Otherwise\n"
 "contact us if you do not receive it within a few minutes."
 msgstr ""
-"لقد قمنا بارسال بريد الكتروني لك، يرجى الضغط على الرابط للتأكيد. اذا لم تعثر "
-"على البريد في صندوق الوارد انظر في البريد الغير مرغوب. او تواصل معنا اذا لم "
-"تحصل على البريد الاكتروني"
+"لقد قمنا بارسال بريد الكتروني لك، يرجى الضغط على الرابط للتأكيد. اذا لم تعثر"
+" على البريد في صندوق الوارد انظر في البريد الغير مرغوب. او تواصل معنا اذا لم"
+" تحصل على البريد الاكتروني"
 
 #: .\templates\allauth\account\verified_email_required.html:23
 #, python-format
@@ -948,23 +937,23 @@ msgstr "مصادقة ثنائية العوامل"
 msgid "Sessions"
 msgstr "جلسات"
 
-#: .\templates\allauth\base.html:17
+#: .\templates\allauth\base.html:16
 msgid "Account"
 msgstr "حسابي"
 
-#: .\templates\allauth\base.html:20
+#: .\templates\allauth\base.html:19
 msgid "Please proceed to continue."
 msgstr "يرجى المتابعة للمتابعة."
 
-#: .\templates\allauth\base.html:28
+#: .\templates\allauth\base.html:27
 msgid "By continuing you agree to our"
 msgstr "من خلال الاستمرار توافق على"
 
-#: .\templates\allauth\base.html:29 .\templates\includes\footer.html:21
+#: .\templates\allauth\base.html:28 .\templates\includes\footer.html:21
 msgid "Terms"
 msgstr "الشروط"
 
-#: .\templates\allauth\base.html:30
+#: .\templates\allauth\base.html:29
 msgid "and"
 msgstr "و"
 
@@ -1044,7 +1033,8 @@ msgstr "خطأ"
 msgid ""
 "Your account is protected by two-factor authentication. Please enter an "
 "authenticator code:"
-msgstr "حسابك محمي من خلال المصادقة ثنائية العوامل. الرجاء إدخال رمز المصادقة:"
+msgstr ""
+"حسابك محمي من خلال المصادقة ثنائية العوامل. الرجاء إدخال رمز المصادقة:"
 
 #: .\templates\allauth\mfa\authenticate.html:41
 #: .\templates\allauth\mfa\webauthn\reauthenticate.html:15
@@ -1204,7 +1194,8 @@ msgid "Enter an authenticator code:"
 msgstr "أدخل رمز التحقق من البريد الإلكتروني"
 
 #: .\templates\allauth\mfa\recovery_codes\generate.html:9
-msgid "You are about to generate a new set of recovery codes for your account."
+msgid ""
+"You are about to generate a new set of recovery codes for your account."
 msgstr "أنت على وشك إنشاء مجموعة جديدة من رموز الاسترداد لحسابك."
 
 #: .\templates\allauth\mfa\recovery_codes\generate.html:11
@@ -1238,9 +1229,9 @@ msgid ""
 "below with your authenticator app. Then, input the verification code "
 "generated by the app below."
 msgstr ""
-"لحماية حسابك من خلال المصادقة ثنائية العوامل ، قم بفحص رمز الاستجابة السريعة "
-"أدناه باستخدام تطبيق المصادقة الخاص بك. ثم ، أدخل رمز التحقق الذي تم إنشاؤه "
-"بواسطة التطبيق أدناه."
+"لحماية حسابك من خلال المصادقة ثنائية العوامل ، قم بفحص رمز الاستجابة السريعة"
+" أدناه باستخدام تطبيق المصادقة الخاص بك. ثم ، أدخل رمز التحقق الذي تم إنشاؤه"
+" بواسطة التطبيق أدناه."
 
 #: .\templates\allauth\mfa\totp\activate_form.html:21
 msgid "Authenticator secret"
@@ -1423,7 +1414,8 @@ msgstr "أنت على وشك توصيل حساب جديد لجهة خارجية%
 
 #: .\templates\allauth\socialaccount\login.html:15
 #, python-format
-msgid "You are about to sign in using a third-party account from %(provider)s."
+msgid ""
+"You are about to sign in using a third-party account from %(provider)s."
 msgstr "أنت على وشك تسجيل الدخول باستخدام حساب طرف ثالث من%(provider)s."
 
 #: .\templates\allauth\socialaccount\login_cancelled.html:5
@@ -1438,8 +1430,8 @@ msgid ""
 "accounts. If this was a mistake, please proceed to <a "
 "href=\"%(login_url)s\">sign in</a>."
 msgstr ""
-"قررت إلغاء تسجيل الدخول إلى موقعنا باستخدام أحد حساباتك الحالية. إذا كان هذا "
-"خطأ ، فيرجى المتابعة إلى <a href = \"%(login_url)s\"> تسجيل الدخول </a>."
+"قررت إلغاء تسجيل الدخول إلى موقعنا باستخدام أحد حساباتك الحالية. إذا كان هذا"
+" خطأ ، فيرجى المتابعة إلى <a href = \"%(login_url)s\"> تسجيل الدخول </a>."
 
 #: .\templates\allauth\socialaccount\messages\account_connected.txt:2
 msgid "The third-party account has been connected."
@@ -1461,14 +1453,12 @@ msgstr "ملفك الشخصي"
 #, python-format
 msgid ""
 "\n"
-"      You are about to use your %(provider_name)s account to login to "
-"%(site_name)s.\n"
+"      You are about to use your %(provider_name)s account to login to %(site_name)s.\n"
 "      As a final step, please complete the following form:\n"
 "    "
 msgstr ""
 "\n"
-"      أنت على وشك استخدام حسابك في %(provider_name)s لتسجيل الدخول إلى "
-"%(site_name)s.\n"
+"      أنت على وشك استخدام حسابك في %(provider_name)s لتسجيل الدخول إلى %(site_name)s.\n"
 "      كخطوة أخيرة، يرجى إكمال النموذج التالي:\n"
 "    "
 
@@ -1479,7 +1469,7 @@ msgstr "تسجيل الدخول"
 #: .\templates\allauth\socialaccount\snippets\provider_list.html:16
 #, python-format
 msgid "Continue with %(name)s"
-msgstr "تسجيل الدخول بواسطة(name)s"
+msgstr " الاشتراك أو تسجيل الدخول بواسطة %(name)s"
 
 #: .\templates\allauth\usersessions\messages\sessions_logged_out.txt:2
 msgid "Signed out of all other sessions."
@@ -1552,7 +1542,7 @@ msgstr "تسجيل الدخول"
 
 #: .\templates\includes\navbar\account.html:31
 msgid "Register"
-msgstr "يسجل"
+msgstr "إنشاء حساب جديد"
 
 #: .\templates\includes\navbar\links.html:10
 msgid "Home"
@@ -1646,8 +1636,8 @@ msgstr "ابحث في الموقع"
 #~ "If you have not created an account yet, then please %(link)ssign "
 #~ "up%(end_link)s first."
 #~ msgstr ""
-#~ "إذا لم تكن قد قمت بإنشاء حساب بعد ، فمن "
-#~ "فضلك%(link)sاشتراك%(end_link)sأولاً."
+#~ "إذا لم تكن قد قمت بإنشاء حساب بعد ، فمن فضلك%(link)أنشأ حساب "
+#~ "جديد%(end_link)sأولاً."
 
 #~ msgid "Sign in with a passkey"
 #~ msgstr "تسجيل الدخول مع مفتاح المرور"
