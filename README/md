@@ -1,105 +1,421 @@
-# Flomarkt E-Commerce Plan
+# FloMarkt24 — Multi-Vertical Marketplace (Products · Services · Rentals · Property)
 
-Multilingual shop built with Django, django-allauth, PostgreSQL, Bootstrap 5, and Toastr.
+Django marketplace that supports buying and selling across multiple verticals:
+- Physical **products** with variants and stock
+- **Tech/general services** with hourly/fixed packages + RFQs
+- **Rentals** and **hotel rooms** with availability and bookings
+- **Real estate** (rent or sale)
 
-## 0. Non-Goals
-- No headless architecture or single-page application.
-- Payments out of scope for MVP.
+Production-ready foundations: Allauth auth, profiles, i18n (EN/DE/AR), Bootstrap 5 + crispy forms, Toastr messages, WhiteNoise, Render deployment.
 
-## 1. Functional Scope
-### 1.1 Auth and Accounts
-- Sign up, sign in, log out.
-- Basic profile page and password reset.
+---
 
-### 1.2 Catalog
-- Hierarchical categories and translated products.
-- Images with one primary per product.
-- Listing with search, category filter, and sorting.
-- Detail page with gallery.
+## Table of Contents
+- [Stack](#stack)
+- [Current State](#current-state)
+- [App Architecture](#app-architecture)
+- [Directory Layout](#directory-layout)
+- [UI/UX Conventions](#uiux-conventions)
+- [Internationalization](#internationalization)
+- [Authentication](#authentication)
+- [Profiles and Vendors](#profiles-and-vendors)
+- [Catalog Domain Model](#catalog-domain-model)
+- [API & Docs](#api--docs)
+- [Local Setup](#local-setup)
+- [Configuration](#configuration)
+- [Database & Migrations](#database--migrations)
+- [Admin](#admin)
+- [Quality: Linting, Formatting, Tests](#quality-linting-formatting-tests)
+- [Logging & Monitoring](#logging--monitoring)
+- [Static & Media](#static--media)
+- [Deployment (Render)](#deployment-render)
+- [Security Checklist](#security-checklist)
+- [Accessibility & RTL](#accessibility--rtl)
+- [Roadmap & Build Plan](#roadmap--build-plan)
+- [License](#license)
 
-### 1.3 Cart
-- Session-based cart with add, update, remove, and clear.
-- Quantity limits and stock checks.
+---
 
-### 1.4 Checkout and Orders
-- Guest checkout capturing contact and address.
-- Order records with line-item snapshots.
-- Order statuses (`new`, `paid`, `shipped`, `canceled`; MVP uses `new`).
+## Stack
+- **Framework**: Django 5.x
+- **DB**: PostgreSQL (via `DATABASE_URL`)
+- **Auth**: django-allauth (email + Google)
+- **UI**: Bootstrap 5, crispy-bootstrap5, Toastr
+- **i18n**: EN/DE/AR with `.po` files and helper scripts
+- **Packaging**: gunicorn, WhiteNoise
+- **Optional**: DRF + drf-spectacular (future APIs), S3 via `django-storages`
 
-### 1.5 Content and Pages
-- Home, About, Contact pages.
-- Toastr for flash messages and responsive layout.
+Key libs present:
+`django-allauth`, `crispy-forms`, `crispy-bootstrap5`, `django-countries`, `djangorestframework`, `drf-spectacular`, `django-storages`, `boto3`, `whitenoise`, `sentry-sdk`, `pytest`, `pytest-django`, `black`, `isort`, `ruff`.
 
-### 1.6 Internationalization
-- English, German, and Arabic interfaces.
-- Model translations, per-language slugs, RTL support for Arabic.
+---
 
-## 2. Non-Functional Requirements
-### Security
-- CSRF protection and sensible defaults for production.
+## Current State
+Running Django web service with apps:
+- `home`: About, Contact
+- `profiles`: User profile edit (views/forms provided). To be extended with seller onboarding and `Vendor`.
+- **`catalog`**: created and empty models (to be implemented next).
+- Allauth installed and wired. Google provider present but optional.
+- i18n scaffolding with `translate_po.py` and `fix_newline_parity.py`.
+- Bootstrap 5 theme, Toastr message bridge, custom CSS (`base.css`, `components.css`, `theme.css`, `footer.css`, `profile.css`, `index.css`).
 
-### Performance
-- Efficient queries and indexes on key fields.
+Settings highlights:
+- `ALLOWED_HOSTS`: `localhost`, `127.0.0.1`, `.onrender.com`
+- `CSRF_TRUSTED_ORIGINS`: local + `https://*.onrender.com`
+- `SITE_ID` from env
+- Static: WhiteNoise. Media: local in dev.
 
-### Accessibility
-- Semantic markup, focus visibility, and toast live region.
+---
 
-### SEO
-- Titles, meta descriptions, canonical links, and hreflang tags.
+## App Architecture
 
-## 3. Data Model Overview
-- **Category**: translated name and slug, optional parent, active flag.
-- **Product**: belongs to category, translated title/slug/description, price, stock, active flag, creation timestamp.
-- **Product Image**: image file, alt text, primary flag.
-- **Order**: customer info, address, total, status, creation timestamp.
-- **Order Item**: link to order and product, snapshot of title, unit price, and quantity.
+```text
+project/
+  home/                ← marketing pages
+  profiles/            ← UserProfile + Vendor (seller onboarding)
+  catalog/             ← Listings + concrete models (to implement)
+  templates/           ← Base layout + Allauth overrides
+  static/              ← CSS/JS/assets (Bootstrap, Toastr, theme)
+  locale/              ← ar, de translations (.po/.mo)
+Pattern: One Listing wrapper per public item. Listing points to a concrete object via ContentTypes:
 
-## 4. Internationalization
-- Interfaces in English, German, and Arabic.
-- Translation files maintained with Django's standard tooling.
-- Templates set `lang` and `dir` attributes with RTL support for Arabic.
+Product → ProductVariant → Inventory
 
-## 5. Site Structure
-- Home and static pages.
-- Catalog listing and product detail.
-- Cart and checkout flow.
-- Authentication and profile pages.
+Service → ServicePackage → ServiceRequest (RFQ)
 
-## 6. Admin
-- Manage categories, products, and images with translation support.
+Room / RentalItem → Booking
 
-## 7. Views and Query Guidelines
-- Use `select_related` and `prefetch_related` where appropriate.
+Property (sale or rent)
 
-## 8. Cart Rules
-- Session cart maps product IDs to quantity and price at add time.
-- Quantities limited to available stock with a max per item.
+One account for buy and sell. Seller capability is gated by UserProfile.is_seller and Vendor.is_active.
 
-## 9. Checkout Rules
-- Validate address data, verify stock, and create order atomically.
+Directory Layout
+templates/base.html: global shell, Bootstrap/Toastr wiring.
 
-## 10. Messages and Toastr
-- Map Django message tags to Toastr notifications.
+templates/includes/navbar/…: navigation with dropdown hover bridge.
 
-## 11. Configuration
-- Environment variables for secret key, database URL, debug flag, and allowed hosts.
-- Console email backend for development.
-- Django-allauth configured for username/email authentication without email verification.
+static/css/…: theme and component styles.
 
-## 12. Testing
-- Unit tests for catalog, cart, and orders.
-- Integration tests for localized views and checkout.
+static/js/base.js, footer.js: site scripts.
 
-## 13. Deployment Checklist
-- Debug disabled, hosts configured, migrations applied, static files collected, superuser created, language settings verified.
+locale/{en,de,ar}/LC_MESSAGES/django.po: translations.
 
-## 14. Milestones and Acceptance Criteria
-- **M1 Auth & Base**: auth flows and localized basic pages.
-- **M2 Catalog**: translated product list/detail with search and sorting.
-- **M3 Cart**: add/update/remove with stock limits.
-- **M4 Checkout**: order creation and thank-you page.
-- **M5 Polish**: accessibility checks and SEO basics.
+UI/UX Conventions
+Toastr messages: Django messages are serialized in <script id="django-messages">…</script> and shown via Toastr with sane defaults (close button, progress bar, top-right, 4s).
 
-## 15. Future Work
-- Payments, product variants, coupons, wishlist, reviews, search enhancements, sitemaps, email integration, image optimization, and potential Tailwind migration.
+Dropdowns: Hover-open on desktop with a 10px “bridge” to prevent flicker. Open is animated; close is slightly delayed.
 
+Navbar underline: Thin underline for active/hover states; dropdown toggles excluded.
+
+Responsive: Compact mobile navbar, container max-width at 80% on large screens.
+
+Auth pages: compact inputs, social separator hidden helptext.
+
+Theme: CSS vars in theme.css control background, ink, primary color.
+
+Internationalization
+Languages: English (en), Deutsch (de), العربية (ar).
+
+Workflow:
+
+
+django-admin makemessages -l de -l ar
+python translate_po.py
+python fix_newline_parity.py
+python manage.py compilemessages -l de -l ar
+translate_po.py:
+
+Respects placeholders (%(name)s, {user}, etc.).
+
+Uses glossary for consistent UI terms.
+
+Fills plural forms (AR: 6, DE: 2).
+
+Clears fuzzy.
+
+Locale middleware and LANGUAGE_COOKIE_NAME are configured.
+
+Authentication
+Allauth settings (excerpt):
+
+
+ACCOUNT_LOGIN_METHODS = {"username", "email"}
+ACCOUNT_SIGNUP_FIELDS = ["username*", "password1*", "password2*", "email"]
+ACCOUNT_EMAIL_VERIFICATION = "none"  # can change later
+LOGIN_REDIRECT_URL = "/"
+Google provider keys can be set via env. Logout on GET enabled.
+
+Profiles and Vendors
+profiles currently includes:
+
+UserProfile with contact and address fields, auto-created via signal.
+
+Forms: UserForm, UserProfileForm.
+
+View: profile supports update + Toastr success.
+
+To add:
+
+UserProfile.is_seller, kyc_submitted, kyc_approved
+
+Vendor(owner OneToOne User, display_name, slug, is_active, bio, payout_*)
+
+Views: seller_onboarding, seller_dashboard
+
+Helper:
+
+
+def require_seller(user):
+    p = getattr(user, "userprofile", None)
+    v = getattr(user, "vendor", None)
+    return bool(p and p.is_seller and v and v.is_active)
+Catalog Domain Model
+Shared:
+
+Category tree
+
+Listing wrapper: type, category, vendor, content_object
+
+Concrete:
+
+Product → ProductVariant → Inventory
+
+Service with pricing_type (Hourly/Fixed/Mixed), ServicePackage, ServiceRequest
+
+Room (hotel)
+
+RentalItem (tools/bikes/vehicles per day)
+
+Property (sale or rent)
+
+Booking (GenericForeignKey to bookable item; date range overlap rules)
+
+We will implement these in catalog/models.py.
+
+API & Docs
+DRF and drf-spectacular are installed. REST endpoints and OpenAPI schema will be added after server-rendered MVP:
+
+/api/schema/ (JSON) and /api/docs/ (Swagger UI or Redoc)
+
+Local Setup
+
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+Sample .env:
+
+
+SECRET_KEY=changeme
+DJANGO_DEBUG=True
+DATABASE_URL=postgres://USER:PASS@HOST:5432/DBNAME
+SITE_ID=2
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
+DEFAULT_FROM_EMAIL=noreply@example.com
+Configuration
+Settings include:
+
+INSTALLED_APPS: home, profiles, catalog, allauth, crispy
+
+MIDDLEWARE: Locale, WhiteNoise, Allauth’s AccountMiddleware
+
+Static: STATIC_URL=/static/, STATIC_ROOT=staticfiles, WhiteNoise
+
+Media: MEDIA_URL=/media/, MEDIA_ROOT=media
+
+Database & Migrations
+Use BigAutoField by default.
+
+Keep migrations atomic per app.
+
+Migration order when adding Vendor:
+
+profiles migration (adds Vendor, new flags)
+
+catalog migration (FKs to profiles.Vendor)
+
+Commands:
+
+
+python manage.py makemigrations profiles
+python manage.py migrate
+python manage.py makemigrations catalog
+python manage.py migrate
+Admin
+Register UserProfile, Vendor, and all catalog models.
+
+Useful list filters:
+
+Listing: type, vendor, category, is_active
+
+ProductVariant: by product
+
+Booking: status, start_date, end_date
+
+Property: city, is_for_rent
+
+Quality: Linting, Formatting, Tests
+Format: black, isort
+
+Lint: ruff
+
+Tests: pytest, pytest-django, factory-boy, Faker
+
+Commands:
+
+
+ruff check .
+black .
+isort .
+pytest -q
+Priority tests:
+
+Seller gating on create/edit views
+
+Booking overlap logic
+
+Inventory decrement on order placement
+
+ServiceRequest lifecycle
+
+i18n smoke for critical pages
+
+Logging & Monitoring
+sentry-sdk available. Hook later:
+
+
+import sentry_sdk
+sentry_sdk.init(dsn=os.getenv("SENTRY_DSN",""), traces_sample_rate=0.1)
+Static & Media
+WhiteNoise serves static in production.
+
+For media in production, use S3 compatible storage:
+
+django-storages, boto3
+
+configure DEFAULT_FILE_STORAGE, bucket, credentials
+
+Deployment (Render)
+Build
+
+pip install -r requirements.txt
+python manage.py collectstatic --noinput
+python manage.py migrate
+Start
+
+
+gunicorn project.wsgi:application
+Set env: SECRET_KEY, DATABASE_URL, SITE_ID, email vars, Google keys.
+
+Security Checklist
+Rotate SECRET_KEY
+
+Set DEBUG=False in prod
+
+Review ALLOWED_HOSTS and CSRF_TRUSTED_ORIGINS
+
+Enforce email verification once flows stabilize
+
+Add password validators (already enabled)
+
+Add CSP/SEC headers middleware later
+
+Validate uploads and limit size/types
+
+Accessibility & RTL
+Arabic RTL is supported via <html dir="rtl"> switch.
+
+Focus styles customized for logo and links.
+
+Keep color contrast within WCAG AA.
+
+Roadmap & Build Plan
+Phase 0 — Baseline and Catalog Models
+ Implement Category, Listing with type and GenericForeignKey
+
+ Implement Product, ProductVariant, Inventory
+
+ Implement Service, ServicePackage, ServiceRequest
+
+ Implement Room, RentalItem, Property, Booking
+
+ Register all in admin with filters and search
+
+ Create initial categories seed (fixtures)
+
+Phase 1 — Profiles → Sellers
+ Extend UserProfile with is_seller, kyc_submitted, kyc_approved
+
+ Add Vendor OneToOne to user; admin approval flow
+
+ Views: seller_onboarding, seller_dashboard
+
+ Navbar link: “Become a Seller” vs “My Store”
+
+ require_seller helper and decorators
+
+Phase 2 — Products MVP
+ Seller CRUD for Product/Variant/Inventory
+
+ Auto-wrap Listing(type=PRODUCT) on create
+
+ Public product list/detail
+
+ Cart (session) + checkout scaffold (offline payment)
+
+ Basic stock decrement on order confirm
+
+Phase 3 — Services MVP
+ Seller CRUD for Service + Packages
+
+ Public service detail with “Request a quote”
+
+ Buyer creates ServiceRequest, seller quotes and updates status
+
+ Notifications (Toastr + optional email)
+
+Phase 4 — Rentals & Rooms
+ Booking model + overlap validation
+
+ Price calc by date range and quantity
+
+ Public booking form with availability check
+
+ Seller view of bookings
+
+Phase 5 — Property
+ Property CRUD, listing detail
+
+ Filters: city, bedrooms, price
+
+ Lead form (contact vendor), optional viewing booking
+
+Phase 6 — Unified Search & UX
+ /search endpoint with facets by Listing.type, price, city, dates
+
+ Category tree navigation
+
+ Media gallery on listing detail
+
+ i18n copies for all new pages
+
+Phase 7 — Orders & Payments Scaffold
+ New orders app: Order, OrderLine referencing Listing and optional Booking
+
+ Offline payments first
+
+ Plan Stripe Connect split payouts
+
+Phase 8 — Hardening
+ E2E smoke tests per vertical
+
+ Caching hot pages, index review
+
+ Sentry, 2FA recommendations, rate limiting
+
+License
+Proprietary. All rights reserved. (Change as needed.)
