@@ -26,13 +26,13 @@ msgstr "من نحن"
 
 #: .\home\templates\home\about.html:5
 msgid "We are a community-driven online flea market."
-msgstr "نحن سوق إلكتروني للسلع المستعملة يقوده المجتمع."
+msgstr "نحن سوق إلكتروني للسلع المستعملة."
 
 #: .\home\templates\home\contact.html:2 .\home\templates\home\contact.html:4
 #: .\templates\includes\footer.html:19
 #: .\templates\includes\navbar\links.html:24
 msgid "Contact"
-msgstr "اتصل بنا"
+msgstr "تواصل معنا"
 
 #: .\home\templates\home\contact.html:5
 msgid "Reach us via the form or email."
@@ -106,7 +106,7 @@ msgstr "عنوان الشارع ٢"
 
 #: .\profiles\models.py:21
 msgid "County"
-msgstr "المحافظة"
+msgstr "المحافظة أو المقاطعة"
 
 #: .\profiles\models.py:22
 msgid "Country"
@@ -309,7 +309,7 @@ msgstr "أساسي"
 
 #: .\templates\allauth\account\email.html:44
 msgid "Make Primary"
-msgstr "جعل الابتدائية"
+msgstr "اجعله أساسي"
 
 #: .\templates\allauth\account\email.html:47
 #: .\templates\allauth\account\email_change.html:37
@@ -322,7 +322,7 @@ msgstr "إعادة التحقق"
 #: .\templates\allauth\mfa\webauthn\authenticator_list.html:60
 #: .\templates\allauth\socialaccount\connections.html:40
 msgid "Remove"
-msgstr "يزيل"
+msgstr "احذف"
 
 #: .\templates\allauth\account\email.html:59
 msgid "Add Email Address"
@@ -334,7 +334,7 @@ msgstr "أضف البريد الإلكتروني"
 
 #: .\templates\allauth\account\email.html:80
 msgid "Do you really want to remove the selected email address?"
-msgstr "هل تريد حقًا إزالة عنوان البريد الإلكتروني المحدد؟"
+msgstr "هل تريد حقًا حذف عنوان البريد الإلكتروني المحدد؟"
 
 #: .\templates\allauth\account\email\account_already_exists_message.txt:4
 #, python-format
@@ -657,11 +657,11 @@ msgstr "تمت إزالة عنوان البريد الإلكتروني%(email)s.
 #: .\templates\allauth\account\messages\logged_in.txt:4
 #, python-format
 msgid "Successfully signed in as %(name)s."
-msgstr "وقعت بنجاح في%(name)s."
+msgstr "تم تسجيل الدخول بنجاح%(name)s."
 
 #: .\templates\allauth\account\messages\logged_out.txt:2
 msgid "You have signed out."
-msgstr "لقد وقعت."
+msgstr "تم تسجيل الخروج ."
 
 #: .\templates\allauth\account\messages\login_code_sent.txt:2
 #, python-format
@@ -725,7 +725,7 @@ msgstr ""
 
 #: .\templates\allauth\account\password_reset_from_key.html:10
 msgid "Bad Token"
-msgstr "رمز سيء"
+msgstr "رمز غير صحيح"
 
 #: .\templates\allauth\account\password_reset_from_key.html:18
 #, python-format
@@ -996,7 +996,7 @@ msgstr "أدخل الرمز المعروض على جهازك."
 #: .\templates\allauth\socialaccount\login_redirect.html:10
 #: .\templates\allauth\socialaccount\signup.html:41
 msgid "Continue"
-msgstr "يكمل"
+msgstr "استمر"
 
 #: .\templates\allauth\idp\oidc\device_authorization_confirm_form.html:9
 msgid "Confirm Device"
@@ -1011,11 +1011,11 @@ msgstr "يرجى تأكيد الرمز المعروض على%(client_name)sلت�
 
 #: .\templates\allauth\idp\oidc\device_authorization_confirm_form.html:16
 msgid "Code"
-msgstr "شفرة"
+msgstr "رمز"
 
 #: .\templates\allauth\idp\oidc\device_authorization_confirm_form.html:29
 msgid "Deny"
-msgstr "ينكر"
+msgstr "رفض"
 
 #: .\templates\allauth\idp\oidc\device_authorization_confirmed.html:9
 msgid "Device Authorized"
@@ -1176,7 +1176,7 @@ msgstr "لم يتم إعداد رموز الاسترداد."
 
 #: .\templates\allauth\mfa\index.html:96
 msgid "View"
-msgstr "منظر"
+msgstr "عرض"
 
 #: .\templates\allauth\mfa\index.html:102
 msgid "Download"
@@ -1185,7 +1185,7 @@ msgstr "تحميل"
 #: .\templates\allauth\mfa\index.html:110
 #: .\templates\allauth\mfa\recovery_codes\generate.html:29
 msgid "Generate"
-msgstr "يولد"
+msgstr "انشاء رمز جديد"
 
 #: .\templates\allauth\mfa\messages\recovery_codes_generated.txt:2
 msgid "A new set of recovery codes has been generated."
@@ -1244,7 +1244,7 @@ msgstr ""
 
 #: .\templates\allauth\mfa\totp\activate_form.html:21
 msgid "Authenticator secret"
-msgstr "سر المصادقة"
+msgstr "شيفرة المصادقة"
 
 #: .\templates\allauth\mfa\totp\activate_form.html:24
 msgid ""
@@ -1335,15 +1335,15 @@ msgstr "آخر استخدام%(last_used)s"
 
 #: .\templates\allauth\mfa\webauthn\authenticator_list.html:56
 msgid "Edit"
-msgstr "يحرر"
+msgstr "تعديل"
 
 #: .\templates\allauth\mfa\webauthn\edit_form.html:7
 msgid "Edit Security Key"
-msgstr "تحرير مفتاح الأمان"
+msgstr "تعديل مفتاح الأمان"
 
 #: .\templates\allauth\mfa\webauthn\edit_form.html:18
 msgid "Save"
-msgstr "يحفظ"
+msgstr "احفظ"
 
 #: .\templates\allauth\mfa\webauthn\signup_form.html:7
 msgid "Create Passkey"
@@ -1360,7 +1360,7 @@ msgstr ""
 
 #: .\templates\allauth\mfa\webauthn\signup_form.html:21
 msgid "Create"
-msgstr "يخلق"
+msgstr "أنشأ"
 
 #: .\templates\allauth\mfa\webauthn\snippets\scripts.html:2
 msgid "This functionality requires JavaScript."
@@ -1479,11 +1479,11 @@ msgstr "تسجيل الدخول"
 #: .\templates\allauth\socialaccount\snippets\provider_list.html:16
 #, python-format
 msgid "Continue with %(name)s"
-msgstr "تواصل مع%(name)s"
+msgstr "تسجيل الدخول بواسطة(name)s"
 
 #: .\templates\allauth\usersessions\messages\sessions_logged_out.txt:2
 msgid "Signed out of all other sessions."
-msgstr "وقع الخروج من جميع الجلسات الأخرى."
+msgstr "تسجيل الخروج من جميع الجلسات الأخرى."
 
 #: .\templates\allauth\usersessions\usersession_list.html:24
 msgid "Started At"
