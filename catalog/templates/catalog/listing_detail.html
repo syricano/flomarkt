@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<div class="container py-4">
+  <nav class="mb-2"><a href="{% url 'catalog:listing_list' %}">&larr; {% trans "Back to listings" %}</a></nav>
+  <h1 class="h4">{{ listing.title }}</h1>
+  <div class="text-muted small mb-2">
+    {{ listing.category.name }} · {{ listing.type }} · {{ listing.vendor.display_name }}
+  </div>
+  {% if listing.hero_image %}<img class="img-fluid mb-3" src="{{ listing.hero_image.url }}" alt="">{% endif %}
+  <p>{{ listing.teaser }}</p>
+</div>
+{% endblock %}

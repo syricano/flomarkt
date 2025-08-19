@@ -8,5 +8,6 @@ urlpatterns = [
     path("", include(("home.urls", "home"), namespace="home")),
     path("profiles/", include(("profiles.urls", "profiles"), namespace="profiles")),
     path("accounts/", include("allauth.urls")),
-    path("i18n/", include("django.conf.urls.i18n")),    
+    path("catalog/", include(("catalog.urls", "catalog"), namespace="catalog")),
+    path("i18n/", include("django.conf.urls.i18n")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

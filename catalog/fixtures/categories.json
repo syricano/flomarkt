@@ -1,0 +1,7 @@
+[
+  {"model": "catalog.category", "pk": 1, "fields": {"name": "Products", "slug": "products", "parent": null}},
+  {"model": "catalog.category", "pk": 2, "fields": {"name": "Services", "slug": "services", "parent": null}},
+  {"model": "catalog.category", "pk": 3, "fields": {"name": "Property", "slug": "property", "parent": null}},
+  {"model": "catalog.category", "pk": 4, "fields": {"name": "Rentals", "slug": "rentals", "parent": null}},
+  {"model": "catalog.category", "pk": 5, "fields": {"name": "Hotels", "slug": "hotels", "parent": 4}}
+]

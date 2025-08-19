@@ -1,6 +1,6 @@
 html{ height:100%; }
 body{
-  margin:0; padding:0; min-height:100vh;
+  margin:0; padding:0; height:calc(100vh - 164px);
   background-color:#F1EFEC; color:#030303; font-family:'Lato';
 }
 
@@ -12,6 +12,10 @@ body{
 /* Keep only dark button here */
 .btn-black{ background:#030303; color:#fff; }
 .btn-black:hover,.btn-black:active,.btn-black:focus{ background:#111; color:#fff; }
+
+.logo-font{ text-transform:uppercase; }
+
+.main-logo-link{width:fit-content;}
 
 /* Container width */
 @media (min-width:1200px){ .container{ max-width:80%; } }

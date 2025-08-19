@@ -1,27 +1,39 @@
 {% extends "base.html" %}
 {% load allauth i18n static %}
-
-{% block extra_css %}
-  <link rel="stylesheet" href="{% static 'css/index.css' %}">
-{% endblock %}
-
-{% block extra_js %}
-  <script src="{% static 'js/index.js' %}"></script>
-{% endblock %}
-
-{% block page_header %}
-  <div class="container header-container">
-    <div class="row"><div class="col"></div></div>
-  </div>
-{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/index.css' %}">{% endblock %}
+{% block extra_js %}<script src="{% static 'js/index.js' %}"></script>{% endblock %}
 
 {% block content %}
 <div class="container h-100">
   <div class="row h-100 align-items-center">
     <div class="col-12 col-md-8 col-lg-6">
       <h1 class="display-4 logo-font text-black mb-3">{% trans "Start shopping here" %}</h1>
-      <a href="#" class="shop-now-button btn btn-lg rounded-0 text-uppercase text-white py-3">{% trans "Shop Now" %}</a>
+      <a href="{% url 'catalog:listing_list' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase text-white py-3">
+        {% trans "Shop Now" %}
+      </a>
     </div>
+  </div>
+</div>
+
+<div class="container py-4">
+  <div class="d-flex align-items-center justify-content-between mb-2">
+    <h2 class="h5 m-0">{% trans "Featured listings" %}</h2>
+    <a href="{% url 'catalog:listing_list' %}" class="small">{% trans "View all" %} →</a>
+  </div>
+  <div class="row g-3">
+    {% for l in latest_listings %}
+      <div class="col-12 col-sm-6 col-lg-3">
+        <a class="card h-100 text-decoration-none" href="{% url 'catalog:listing_detail' l.slug %}">
+          {% if l.hero_image %}<img class="card-img-top" src="{{ l.hero_image.url }}" alt="">{% endif %}
+          <div class="card-body">
+            <div class="small text-muted">{{ l.category.name }} · {{ l.type }}</div>
+            <h3 class="h6 m-0">{{ l.title }}</h3>
+          </div>
+        </a>
+      </div>
+    {% empty %}
+      <p class="text-muted mb-0">{% trans "No listings yet." %}</p>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}

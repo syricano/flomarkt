@@ -1,58 +1,55 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
-
 <ul class="nav align-items-center ms-lg-3 gap-3">
   <li class="nav-item">
-   <a class="nav-link px-0"
-      href="{% url 'home:index' %}"
-      {% if match.app_name == 'home' and match.url_name == 'index' %}aria-current="page"{% endif %}>
+    <a class="nav-link px-0" href="{% url 'home:index' %}"
+       {% if match.app_name == 'home' and match.url_name == 'index' %}aria-current="page"{% endif %}>
       {% trans "Home" %}
-   </a>
-   </li>
-   <li class="nav-item">
-   <a class="nav-link px-0"
-      href="{% url 'home:about' %}"
-      {% if match.app_name == 'home' and match.url_name == 'about' %}aria-current="page"{% endif %}>
-      {% trans "About" %}
-   </a>
-   </li>
-   <li class="nav-item">
-   <a class="nav-link px-0"
-      href="{% url 'home:contact' %}"
-      {% if match.app_name == 'home' and match.url_name == 'contact' %}aria-current="page"{% endif %}>
-      {% trans "Contact" %}
-   </a>
-   </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle px-0"
-       href="#"
-       id="allProductsDropdown"
-       role="button"
-       data-bs-toggle="dropdown"
-       aria-expanded="false">
-      {% trans "All Products" %}
     </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link px-0" href="{% url 'home:about' %}"
+       {% if match.app_name == 'home' and match.url_name == 'about' %}aria-current="page"{% endif %}>
+      {% trans "About" %}
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link px-0" href="{% url 'home:contact' %}"
+       {% if match.app_name == 'home' and match.url_name == 'contact' %}aria-current="page"{% endif %}>
+      {% trans "Contact" %}
+    </a>
+  </li>
 
-    <ul class="dropdown-menu shadow" aria-labelledby="allProductsDropdown" style="min-width:18rem;">
-      <li><a class="dropdown-item" href="#">{% trans "Automotive" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Home & Tools" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Garden & Outdoors" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Electronics" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Computers" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Phones & Accessories" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Fashion" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Beauty & Personal Care" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Health" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Sports & Outdoors" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Toys & Games" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Baby" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Pet Supplies" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Books" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Music" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Grocery" %}</a></li>
-      <li><a class="dropdown-item" href="#">{% trans "Office Products" %}</a></li>
+  <!-- Quick types -->
+  <li class="nav-item">
+    <a class="nav-link px-0" href="{% url 'catalog:listing_list' %}?type=PRODUCT">{% trans "Products" %}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link px-0" href="{% url 'catalog:listing_list' %}?type=SERVICE">{% trans "Services" %}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link px-0" href="{% url 'catalog:listing_list' %}?type=RENTAL_ITEM">{% trans "Rentals" %}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link px-0" href="{% url 'catalog:listing_list' %}?type=ROOM">{% trans "Hotels" %}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link px-0" href="{% url 'catalog:listing_list' %}?type=PROPERTY">{% trans "Property" %}</a>
+  </li>
+
+  <!-- Categories dropdown from DB -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle px-0" href="#" id="categoriesDropdown" role="button"
+       data-bs-toggle="dropdown" aria-expanded="false">
+      {% trans "Categories" %}
+    </a>
+    <ul class="dropdown-menu shadow" aria-labelledby="categoriesDropdown" style="min-width:18rem;">
+      {% for c in catalog_root_categories %}
+        <li><a class="dropdown-item" href="{% url 'catalog:category' c.slug %}">{{ c.name }}</a></li>
+      {% empty %}
+        <li><span class="dropdown-item text-muted">{% trans "No categories" %}</span></li>
+      {% endfor %}
     </ul>
   </li>
 </ul>

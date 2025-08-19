@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'profiles',
     "crispy_forms",
     "crispy_bootstrap5",
+    'catalog',
 ]
 
 SITE_ID = int(os.environ.get("SITE_ID", 2))
@@ -113,6 +114,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                "catalog.context_processors.catalog_nav",
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
