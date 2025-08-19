@@ -43,7 +43,11 @@
     </a>
     <ul class="dropdown-menu shadow" aria-labelledby="categoriesDropdown" style="min-width:18rem;">
       {% for c in catalog_root_categories %}
-        <li><a class="dropdown-item" href="{% url 'catalog:category' c.slug %}">{{ c.name }}</a></li>
+        <li>
+          <a class="dropdown-item" href="{% url 'catalog:category' c.slug %}">
+            {% trans c.name context "category name" %}
+          </a>
+        </li>
       {% empty %}
         <li><span class="dropdown-item text-muted">{% trans "No categories" %}</span></li>
       {% endfor %}

@@ -1,8 +1,12 @@
 #
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-19 17:32+0200\n"
+"POT-Creation-Date: 2025-08-19 16:48+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -10,8 +14,9 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: .\catalog\forms_seller.py:11 .\catalog\models.py:46 .\catalog\models.py:113
+#| msgid "All Products"
 msgid "Product"
-msgstr "منتج"
+msgstr "جميع المنتجات"
 
 #: .\catalog\forms_seller.py:12 .\catalog\models.py:47 .\catalog\models.py:189
 msgid "Service"
@@ -27,16 +32,18 @@ msgid "Real Estate"
 msgstr "العقارات"
 
 #: .\catalog\forms_seller.py:19
+#| msgid "Are you sure you want to sign out?"
 msgid "What do you want to list?"
-msgstr "ماذا تريد أن تدرج؟"
+msgstr "هل أنت متأكد أنك تريد تسجيل الخروج؟"
 
 #: .\catalog\forms_seller.py:28
 msgid "Listing title"
 msgstr "عنوان القائمة"
 
 #: .\catalog\forms_seller.py:32
+#| msgid "Last name"
 msgid "add a name"
-msgstr "أضف اسمًا"
+msgstr "آخر مرة في"
 
 #: .\catalog\forms_seller.py:36
 msgid "Short description"
@@ -47,8 +54,9 @@ msgid "One-line summary"
 msgstr "ملخص خط واحد"
 
 #: .\catalog\forms_seller.py:45 .\catalog\models.py:78
+#| msgid "Current"
 msgid "Currency"
-msgstr "عملة"
+msgstr "البريد الإلكتروني الحالي"
 
 #: .\catalog\forms_seller.py:54
 msgid "Color?"
@@ -80,12 +88,14 @@ msgstr "مقاس؟"
 
 #: .\catalog\forms_seller.py:65
 #: .\catalog\templates\catalog\seller\create_fill_forms.html:91
+#| msgid "Product Management"
 msgid "Product name"
-msgstr "اسم المنتج"
+msgstr "إدارة المنتج"
 
 #: .\catalog\forms_seller.py:66
+#| msgid "Product Management"
 msgid "e.g. Product name"
-msgstr "على سبيل المثال اسم المنتج"
+msgstr "إدارة المنتج"
 
 #: .\catalog\forms_seller.py:69
 #: .\catalog\templates\catalog\seller\create_fill_forms.html:92
@@ -132,8 +142,9 @@ msgid "Optional notes"
 msgstr "ملاحظات اختيارية"
 
 #: .\catalog\forms_seller.py:114
+#| msgid "Device Denied"
 msgid "Service name"
-msgstr "اسم الخدمة"
+msgstr "تم رفض الجهاز"
 
 #: .\catalog\forms_seller.py:115
 msgid "Pricing model"
@@ -227,8 +238,9 @@ msgid "Doors"
 msgstr "الأبواب"
 
 #: .\catalog\forms_seller.py:169 .\catalog\models.py:273
+#| msgid "Terms and Conditions"
 msgid "Condition"
-msgstr "حالة"
+msgstr "الشروط والأحكام"
 
 #: .\catalog\forms_seller.py:170 .\catalog\models.py:274
 msgid "VIN"
@@ -248,8 +260,9 @@ msgstr "وصف"
 #: .\catalog\models.py:72 .\catalog\models.py:185 .\catalog\models.py:204
 #: .\catalog\models.py:280 .\catalog\models.py:335 .\profiles\models.py:41
 #: .\profiles\templates\profiles\seller_dashboard.html:6
+#| msgid "Activate"
 msgid "Active"
-msgstr "نشيط"
+msgstr "فعل"
 
 #: .\catalog\forms_seller.py:177
 msgid "e.g. Volkswagen"
@@ -314,8 +327,9 @@ msgstr "غاية"
 
 #: .\catalog\forms_seller.py:230 .\catalog\models.py:309
 #: .\catalog\templates\catalog\listing_detail.html:83
+#| msgid "IP Address"
 msgid "Address"
-msgstr "عنوان"
+msgstr "العنوان"
 
 #: .\catalog\forms_seller.py:231 .\catalog\forms_seller.py:253
 #: .\catalog\models.py:310
@@ -323,13 +337,14 @@ msgid "City"
 msgstr "مدينة"
 
 #: .\catalog\forms_seller.py:232 .\catalog\models.py:311
+#| msgid "Postcode"
 msgid "Postal code"
-msgstr "رمز بريدي"
+msgstr "الرمز البريدي"
 
 #: .\catalog\forms_seller.py:233 .\catalog\models.py:77
 #: .\catalog\models.py:312 .\profiles\models.py:24
 msgid "Country"
-msgstr "دولة"
+msgstr "الدولة"
 
 #: .\catalog\forms_seller.py:234 .\catalog\models.py:319
 #: .\catalog\templates\catalog\listing_detail.html:75
@@ -387,8 +402,9 @@ msgid "e.g. 2BR near Alexanderplatz"
 msgstr "على سبيل المثال 2BR بالقرب من ألكساندربلاتز"
 
 #: .\catalog\forms_seller.py:252
+#| msgid "Street address 1"
 msgid "Street and number"
-msgstr "الشارع والرقم"
+msgstr "عنوان الشارع ١"
 
 #: .\catalog\forms_seller.py:254
 msgid "e.g. 10117"
@@ -420,7 +436,7 @@ msgstr "خريطة LNG"
 
 #: .\catalog\models.py:20 .\catalog\models.py:107 .\catalog\models.py:174
 msgid "Name"
-msgstr "اسم"
+msgstr "الاسم"
 
 #: .\catalog\models.py:21 .\catalog\models.py:58 .\profiles\models.py:39
 #: .\profiles\templates\profiles\seller_pending.html:10
@@ -477,8 +493,9 @@ msgid "Review notes"
 msgstr "ملاحظات المراجعة"
 
 #: .\catalog\models.py:69
+#| msgid "Started At"
 msgid "Submitted at"
-msgstr "قدم في"
+msgstr "بدأت في"
 
 #: .\catalog\models.py:70
 msgid "Published at"
@@ -515,32 +532,37 @@ msgstr "صفات"
 #: .\catalog\models.py:114
 #: .\catalog\templates\catalog\seller\create_fill_forms.html:41
 #: .\templates\includes\navbar\links.html:26
+#| msgid "All Products"
 msgid "Products"
-msgstr "المنتجات"
+msgstr "جميع المنتجات"
 
 #: .\catalog\models.py:131
 msgid "Product group"
 msgstr "مجموعة المنتج"
 
 #: .\catalog\models.py:132
+#| msgid "All Products"
 msgid "Product groups"
-msgstr "مجموعات المنتجات"
+msgstr "جميع المنتجات"
 
 #: .\catalog\models.py:140
 msgid "Variant code"
 msgstr "رمز البديل"
 
 #: .\catalog\models.py:142
+#| msgid "Other options"
 msgid "Options"
-msgstr "خيارات"
+msgstr "خيارات أخرى"
 
 #: .\catalog\models.py:145
+#| msgid "Product Management"
 msgid "Product variant"
-msgstr "متغير المنتج"
+msgstr "إدارة المنتج"
 
 #: .\catalog\models.py:146
+#| msgid "Product Management"
 msgid "Product variants"
-msgstr "متغيرات المنتج"
+msgstr "إدارة المنتج"
 
 #: .\catalog\models.py:154 .\catalog\models.py:358
 msgid "Quantity"
@@ -591,8 +613,9 @@ msgid "Inclusions"
 msgstr "الادراج"
 
 #: .\catalog\models.py:203
+#| msgid "Sessions"
 msgid "Revisions"
-msgstr "المراجعات"
+msgstr "جلسات"
 
 #: .\catalog\models.py:207
 msgid "Service package"
@@ -615,8 +638,9 @@ msgid "Accepted"
 msgstr "مقبول"
 
 #: .\catalog\models.py:221 .\catalog\models.py:364
+#| msgid "Cancel"
 msgid "Canceled"
-msgstr "ألغى"
+msgstr "الغاء"
 
 #: .\catalog\models.py:226
 msgid "Brief"
@@ -647,8 +671,9 @@ msgid "Manual"
 msgstr "يدوي"
 
 #: .\catalog\models.py:245
+#| msgid "Automotive"
 msgid "Automatic"
-msgstr "تلقائي"
+msgstr "السيارات"
 
 #: .\catalog\models.py:248
 msgid "Petrol"
@@ -663,8 +688,9 @@ msgid "Hybrid"
 msgstr "هجين"
 
 #: .\catalog\models.py:251
+#| msgid "Electronics"
 msgid "Electric"
-msgstr "كهربائي"
+msgstr "الإلكترونيات"
 
 #: .\catalog\models.py:252
 msgid "LPG"
@@ -711,8 +737,9 @@ msgid "For sale"
 msgstr "للبيع"
 
 #: .\catalog\models.py:301
+#| msgid "Current"
 msgid "For rent"
-msgstr "للإيجار"
+msgstr "البريد الإلكتروني الحالي"
 
 #: .\catalog\models.py:334
 msgid "Media"
@@ -731,8 +758,9 @@ msgid "Properties"
 msgstr "ملكيات"
 
 #: .\catalog\models.py:356
+#| msgid "Started At"
 msgid "Start date"
-msgstr "تاريخ البدء"
+msgstr "بدأت في"
 
 #: .\catalog\models.py:357
 msgid "End date"
@@ -743,20 +771,24 @@ msgid "Total price"
 msgstr "إجمالي السعر"
 
 #: .\catalog\models.py:364
+#| msgid "Confirm"
 msgid "Confirmed"
-msgstr "مؤكد"
+msgstr "تأكيد"
 
 #: .\catalog\models.py:370
+#| msgid "Books"
 msgid "Booking"
-msgstr "الحجز"
+msgstr "كتب"
 
 #: .\catalog\models.py:371
+#| msgid "Books"
 msgid "Bookings"
-msgstr "الحجوزات"
+msgstr "كتب"
 
 #: .\catalog\templates\catalog\listing_detail.html:8
+#| msgid "Back to top"
 msgid "Back to listings"
-msgstr "العودة إلى القوائم"
+msgstr "العودة إلى الأعلى"
 
 #: .\catalog\templates\catalog\listing_detail.html:39
 msgid "Previous"
@@ -782,8 +814,9 @@ msgid "No listings yet."
 msgstr "لا توجد قوائم حتى الآن."
 
 #: .\catalog\templates\catalog\seller\create_fill_forms.html:9
+#| msgid "Create"
 msgid "Create Listing"
-msgstr "إنشاء قائمة"
+msgstr "أنشأ"
 
 #: .\catalog\templates\catalog\seller\create_fill_forms.html:22
 msgid "Listing details"
@@ -796,15 +829,17 @@ msgstr "تفاصيل القائمة"
 #: .\templates\allauth\mfa\webauthn\authenticator_list.html:60
 #: .\templates\allauth\socialaccount\connections.html:40
 msgid "Remove"
-msgstr "يزيل"
+msgstr "احذف"
 
 #: .\catalog\templates\catalog\seller\create_fill_forms.html:82
+#| msgid "All Products"
 msgid "Add product"
-msgstr "أضف المنتج"
+msgstr "جميع المنتجات"
 
 #: .\catalog\templates\catalog\seller\create_fill_forms.html:114
+#| msgid "Unspecified"
 msgid "Specifics"
-msgstr "تفاصيل"
+msgstr "لم يتم التحقق منه"
 
 #: .\catalog\templates\catalog\seller\create_fill_forms.html:125
 msgid "Save draft and review"
@@ -820,7 +855,7 @@ msgstr "أضف قائمة جديدة"
 #: .\templates\allauth\socialaccount\login_redirect.html:10
 #: .\templates\allauth\socialaccount\signup.html:41
 msgid "Continue"
-msgstr "يكمل"
+msgstr "استمر"
 
 #: .\catalog\templates\catalog\seller\create_select_type.html:20
 msgid ""
@@ -851,7 +886,7 @@ msgstr "قائمة المراجعة"
 #: .\catalog\templates\catalog\seller\review.html:15
 #: .\templates\allauth\mfa\webauthn\authenticator_list.html:56
 msgid "Edit"
-msgstr "يحرر"
+msgstr "تعديل"
 
 #: .\catalog\templates\catalog\seller\review.html:16
 msgid "Submit for review"
@@ -861,25 +896,25 @@ msgstr "إرسال للمراجعة"
 #: .\templates\includes\footer.html:18
 #: .\templates\includes\navbar\links.html:14
 msgid "About"
-msgstr "عن"
+msgstr "من نحن"
 
 #: .\home\templates\home\about.html:5
 msgid "We are a community-driven online flea market."
-msgstr "نحن سوق السلع المستعملة عبر الإنترنت التي يحركها المجتمع."
+msgstr "نحن سوق إلكتروني للسلع المستعملة."
 
 #: .\home\templates\home\contact.html:2 .\home\templates\home\contact.html:4
 #: .\templates\includes\footer.html:19
 #: .\templates\includes\navbar\links.html:20
 msgid "Contact"
-msgstr "اتصال"
+msgstr "تواصل معنا"
 
 #: .\home\templates\home\contact.html:5
 msgid "Reach us via the form or email."
-msgstr "تصل إلينا عبر النموذج أو البريد الإلكتروني."
+msgstr "تواصل معنا عبر النموذج أو البريد الإلكتروني."
 
 #: .\home\templates\home\index.html:10
 msgid "Start shopping here"
-msgstr "ابدأ التسوق من هنا"
+msgstr "ابدأ بالتسوق هنا"
 
 #: .\home\templates\home\index.html:12
 msgid "Shop Now"
@@ -890,12 +925,13 @@ msgid "Featured listings"
 msgstr "قوائم مميزة"
 
 #: .\home\templates\home\index.html:21
+#| msgid "View"
 msgid "View all"
-msgstr "عرض الكل"
+msgstr "عرض"
 
 #: .\home\templates\home\privacy.html:6 .\templates\allauth\base.html:30
 msgid "Privacy Policy"
-msgstr "سياسة الخصوصية"
+msgstr "الخصوصية"
 
 #: .\home\templates\home\privacy.html:7
 msgid ""
@@ -914,7 +950,7 @@ msgstr "يرجى قراءة هذه الشروط والأحكام بعناية ق
 
 #: .\profiles\models.py:13
 msgid "User"
-msgstr "مستخدم"
+msgstr "اسم المستخدم"
 
 #: .\profiles\models.py:14
 msgid "First name"
@@ -922,7 +958,7 @@ msgstr "الاسم الأول"
 
 #: .\profiles\models.py:15
 msgid "Last name"
-msgstr "اسم العائلة"
+msgstr "آخر مرة في"
 
 #: .\profiles\models.py:16
 msgid "Phone number"
@@ -930,51 +966,54 @@ msgstr "رقم التليفون"
 
 #: .\profiles\models.py:17
 msgid "Email"
-msgstr "بريد إلكتروني"
+msgstr "البريد الإلكتروني"
 
 #: .\profiles\models.py:19
 msgid "Postcode"
-msgstr "شفرة البريد"
+msgstr "الرمز البريدي"
 
 #: .\profiles\models.py:20
 msgid "Town or city"
-msgstr "المدينة أو المدينة"
+msgstr "المدينة"
 
 #: .\profiles\models.py:21
 msgid "Street address 1"
-msgstr "عنوان الشارع 1"
+msgstr "عنوان الشارع ١"
 
 #: .\profiles\models.py:22
 msgid "Street address 2"
-msgstr "عنوان الشارع 2"
+msgstr "عنوان الشارع ٢"
 
 #: .\profiles\models.py:23
 msgid "County"
-msgstr "مقاطعة"
+msgstr "المحافظة أو المقاطعة"
 
 #: .\profiles\models.py:24
 msgid "Country *"
-msgstr "دولة *"
+msgstr "الدولة *"
 
 #: .\profiles\models.py:37
 msgid "Owner"
 msgstr "مالك"
 
 #: .\profiles\models.py:38
+#| msgid "First name"
 msgid "Display name"
-msgstr "اسم العرض"
+msgstr "الاسم الأول"
 
 #: .\profiles\models.py:40
 msgid "Bio"
 msgstr "السيرة الذاتية"
 
 #: .\profiles\models.py:44
+#| msgid "Connect %(provider)s"
 msgid "Payout provider"
-msgstr "مزود الدفع"
+msgstr "يتصل%(provider)s"
 
 #: .\profiles\models.py:45
+#| msgid "Create your account"
 msgid "Payout account id"
-msgstr "معرف حساب الدفع"
+msgstr "قم بإنشاء حسابك"
 
 #: .\profiles\models.py:51
 msgid "Vendors"
@@ -983,7 +1022,7 @@ msgstr "البائعون"
 #: .\profiles\templates\profiles\profile.html:26
 #: .\templates\includes\navbar\account.html:29
 msgid "My Profile"
-msgstr "ملفي الشخصي"
+msgstr "الملف الشخصي"
 
 #: .\profiles\templates\profiles\profile.html:36
 msgid "Account Settings"
@@ -991,7 +1030,7 @@ msgstr "إعدادات الحساب"
 
 #: .\profiles\templates\profiles\profile.html:48
 msgid "Update Account"
-msgstr "حساب التحديث"
+msgstr "تحديث بيانات الحساب"
 
 #: .\profiles\templates\profiles\profile.html:57
 msgid "Security"
@@ -999,7 +1038,7 @@ msgstr "حماية"
 
 #: .\profiles\templates\profiles\profile.html:59
 msgid "Manage your password and sign-in settings."
-msgstr "إدارة كلمة المرور وإعدادات تسجيل الدخول."
+msgstr "تم تعيين كلمة المرور الخاصة بك."
 
 #: .\profiles\templates\profiles\profile.html:63
 #: .\templates\allauth\account\password_change.html:4
@@ -1016,11 +1055,11 @@ msgstr "تغيير كلمة المرور"
 
 #: .\profiles\templates\profiles\profile.html:67
 msgid "Reset Password"
-msgstr "إعادة تعيين كلمة المرور"
+msgstr "أعد تعيين كلمة المرور الخاصة بي"
 
 #: .\profiles\templates\profiles\profile.html:71
 msgid "Manage Email Addresses"
-msgstr "إدارة عناوين البريد الإلكتروني"
+msgstr "عناوين البريد الإلكتروني"
 
 #: .\profiles\templates\profiles\profile.html:79
 msgid "Address & Delivery"
@@ -1032,15 +1071,15 @@ msgstr "معلومات التسليم الافتراضية"
 
 #: .\profiles\templates\profiles\profile.html:98
 msgid "Update Address"
-msgstr "تحديث العنوان"
+msgstr "تحديث بيانات العنوان"
 
 #: .\profiles\templates\profiles\profile.html:110
 msgid "Order History"
-msgstr "تاريخ النظام"
+msgstr "الطلبات"
 
 #: .\profiles\templates\profiles\profile.html:119
 msgid "You have not placed any orders yet"
-msgstr "لم تقدم أي أوامر بعد"
+msgstr "لم تقم بأي طلبات بعد"
 
 #: .\profiles\templates\profiles\seller_dashboard.html:6
 msgid "Store slug"
@@ -1065,8 +1104,9 @@ msgid "Leave blank to auto-generate."
 msgstr "اترك فارغًا للعيون التلقائية."
 
 #: .\profiles\templates\profiles\seller_onboarding.html:49
+#| msgid "Create Passkey"
 msgid "Create store"
-msgstr "إنشاء متجر"
+msgstr "إنشاء مفتاح المرور"
 
 #: .\profiles\templates\profiles\seller_pending.html:4
 msgid "Seller onboarding"
@@ -1104,7 +1144,7 @@ msgstr ""
 #: .\templates\allauth\idp\oidc\device_authorization_confirm_form.html:26
 #: .\templates\allauth\mfa\reauthenticate.html:18
 msgid "Confirm"
-msgstr "يتأكد"
+msgstr "تأكيد"
 
 #: .\templates\allauth\account\base_confirm_code.html:43
 msgid "Request new code"
@@ -1119,7 +1159,7 @@ msgstr "طلب رمز جديد"
 #: .\templates\allauth\mfa\trust.html:29
 #: .\templates\allauth\mfa\webauthn\signup_form.html:26
 msgid "Cancel"
-msgstr "يلغي"
+msgstr "الغاء"
 
 #: .\templates\allauth\account\base_reauthenticate.html:5
 #: .\templates\allauth\account\base_reauthenticate.html:9
@@ -1216,7 +1256,7 @@ msgstr "أساسي"
 
 #: .\templates\allauth\account\email.html:44
 msgid "Make Primary"
-msgstr "جعل الابتدائية"
+msgstr "اجعله أساسي"
 
 #: .\templates\allauth\account\email.html:47
 #: .\templates\allauth\account\email_change.html:37
@@ -1234,7 +1274,7 @@ msgstr "أضف البريد الإلكتروني"
 
 #: .\templates\allauth\account\email.html:80
 msgid "Do you really want to remove the selected email address?"
-msgstr "هل تريد حقًا إزالة عنوان البريد الإلكتروني المحدد؟"
+msgstr "هل تريد حقًا حذف عنوان البريد الإلكتروني المحدد؟"
 
 #: .\templates\allauth\account\email\account_already_exists_message.txt:4
 #, python-format
@@ -1250,10 +1290,13 @@ msgid ""
 "\n"
 "%(password_reset_url)s"
 msgstr ""
-"تتلقى هذا البريد الإلكتروني لأنك أو شخص آخر حاولت الاشتراك في\n"
-"الحساب باستخدام عنوان البريد الإلكتروني:%(email)sومع ذلك ، يوجد حساب باستخدام عنوان البريد الإلكتروني هذا بالفعل.  في حال كان لديك\n"
-"نسيان ذلك ، يرجى استخدام الإجراء نسيت كلمة المرور لاستردادها\n"
-"حسابك:%(password_reset_url)s"
+"تتلقى هذا البريد الإلكتروني لأنك أو شخصًا آخر حاول التسجيل للحصول على حساب باستخدام عنوان البريد الإلكتروني:\n"
+"\n"
+"%(email)s\n"
+"\n"
+"ومع ذلك، يوجد حساب يستخدم هذا البريد الإلكتروني بالفعل. في حال كنت قد نسيت ذلك، يرجى استخدام إجراء استعادة كلمة المرور لاسترداد حسابك:\n"
+"\n"
+"%(password_reset_url)s"
 
 #: .\templates\allauth\account\email\account_already_exists_subject.txt:3
 msgid "Account Already Exists"
@@ -1288,9 +1331,11 @@ msgid ""
 "- Browser: %(user_agent)s\n"
 "- Date: %(timestamp)s"
 msgstr ""
-"إذا لم تتعرف على هذا التغيير ، فالرجاء اتخاذ الاحتياطات الأمنية المناسبة على الفور. ينشأ التغيير إلى حسابك من:\n"
+"إذا لم تتعرف على هذا التغيير، فالرجاء اتخاذ الاحتياطات الأمنية المناسبة على الفور. هذا التغيير في حسابك مصدره:\n"
 "\n"
-"- عنوان IP:%(ip)s- المتصفح:%(user_agent)s- تاريخ:%(timestamp)s"
+"- عنوان IP: %(ip)s\n"
+"- المتصفح: %(user_agent)s\n"
+"- التاريخ: %(timestamp)s"
 
 #: .\templates\allauth\account\email\email_changed_message.txt:4
 #, python-format
@@ -1501,7 +1546,7 @@ msgstr ""
 
 #: .\templates\allauth\account\login.html:23
 msgid "Create Account"
-msgstr "إنشاء حساب"
+msgstr "حسابي"
 
 #: .\templates\allauth\account\login.html:32
 msgid "or continue with"
@@ -1542,11 +1587,11 @@ msgstr "تمت إزالة عنوان البريد الإلكتروني%(email)s.
 #: .\templates\allauth\account\messages\logged_in.txt:4
 #, python-format
 msgid "Successfully signed in as %(name)s."
-msgstr "وقعت بنجاح في%(name)s."
+msgstr "تم تسجيل الدخول بنجاح%(name)s."
 
 #: .\templates\allauth\account\messages\logged_out.txt:2
 msgid "You have signed out."
-msgstr "لقد وقعت."
+msgstr "تم تسجيل الخروج ."
 
 #: .\templates\allauth\account\messages\login_code_sent.txt:2
 #, python-format
@@ -1610,7 +1655,7 @@ msgstr ""
 
 #: .\templates\allauth\account\password_reset_from_key.html:10
 msgid "Bad Token"
-msgstr "رمز سيء"
+msgstr "رمز غير صحيح"
 
 #: .\templates\allauth\account\password_reset_from_key.html:18
 #, python-format
@@ -1672,7 +1717,7 @@ msgstr "خيارات تسجيل الدخول الأخرى"
 #: .\templates\allauth\account\signup_by_passkey.html:29
 #: .\templates\allauth\allauth\layouts\base.html:74
 msgid "Sign Up"
-msgstr "اشتراك"
+msgstr "إنشاء حساب"
 
 #: .\templates\allauth\account\signup.html:5
 msgid "Create your account"
@@ -1680,7 +1725,7 @@ msgstr "قم بإنشاء حسابك"
 
 #: .\templates\allauth\account\signup.html:18
 msgid "Show password rules"
-msgstr "إظهار قواعد كلمة المرور"
+msgstr "إعادة تعيين كلمة المرور"
 
 #: .\templates\allauth\account\signup.html:23
 #: .\templates\allauth\socialaccount\signup.html:31
@@ -1701,7 +1746,7 @@ msgstr "لا يمكن أن تكون كلمة المرور كلمة مرور شا
 #: .\templates\allauth\account\signup.html:26
 #: .\templates\allauth\socialaccount\signup.html:34
 msgid "Your password can’t be entirely numeric."
-msgstr "لا يمكن أن تكون كلمة المرور الخاصة بك رقمية تمامًا."
+msgstr "تمت إعادة تعيين كلمة المرور الخاصة بك."
 
 #: .\templates\allauth\account\signup.html:37
 msgid "Already have an account?"
@@ -1709,12 +1754,12 @@ msgstr "هل لديك بالفعل حساب؟"
 
 #: .\templates\allauth\account\signup.html:46
 msgid "or sign up with"
-msgstr "أو اشترك مع"
+msgstr "أو إنشاء حساب بواسطة"
 
 #: .\templates\allauth\account\signup_by_passkey.html:4
 #: .\templates\allauth\socialaccount\signup.html:4
 msgid "Signup"
-msgstr "اشتراك"
+msgstr "إنشاء حساب"
 
 #: .\templates\allauth\account\signup_by_passkey.html:8
 msgid "Passkey Sign Up"
@@ -1784,10 +1829,7 @@ msgid ""
 "This part of the site requires us to verify that\n"
 "you are who you claim to be. For this purpose, we require that you\n"
 "verify ownership of your email address. "
-msgstr ""
-"يتطلب هذا الجزء من الموقع التحقق من ذلك\n"
-"أنت من تدعي أن تكون. لهذا الغرض ، نطلب منك\n"
-"تحقق من ملكية عنوان بريدك الإلكتروني."
+msgstr "هذا القسم للتحقق من الشخصية لذلك يتوجب تأكيد البريد الالكرتوني"
 
 #: .\templates\allauth\account\verified_email_required.html:18
 msgid ""
@@ -1795,9 +1837,9 @@ msgid ""
 "verification. Please click on the link inside that email. If you do not see the verification email in your main inbox, check your spam folder. Otherwise\n"
 "contact us if you do not receive it within a few minutes."
 msgstr ""
-"لقد أرسلنا بريدًا إلكترونيًا لك\n"
-"تَحَقّق. يرجى النقر على الرابط داخل هذا البريد الإلكتروني. إذا لم ترى البريد الإلكتروني للتحقق في صندوق الوارد الخاص بك ، فتحقق من مجلد البريد العشوائي الخاص بك. خلاف ذلك\n"
-"اتصل بنا إذا لم تستلمه في غضون بضع دقائق."
+"لقد قمنا بارسال بريد الكتروني لك، يرجى الضغط على الرابط للتأكيد. اذا لم تعثر"
+" على البريد في صندوق الوارد انظر في البريد الغير مرغوب. او تواصل معنا اذا لم"
+" تحصل على البريد الاكتروني"
 
 #: .\templates\allauth\account\verified_email_required.html:23
 #, python-format
@@ -1805,8 +1847,8 @@ msgid ""
 "<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
 "email address</a>."
 msgstr ""
-"<strong> ملاحظة: </strong> لا يزال بإمكانك <a href = \"%(email_url)s\"> قم "
-"بتغيير عنوان بريدك الإلكتروني </a>."
+"<strong>ملاحظة:</strong> لا يزال بإمكانك <a href=\"%(email_url)s\">تغيير "
+"عنوان بريدك الإلكتروني</a>."
 
 #: .\templates\allauth\allauth\layouts\base.html:18
 msgid "Messages:"
@@ -1820,7 +1862,7 @@ msgstr "قائمة طعام:"
 #: .\templates\allauth\socialaccount\connections.html:5
 #: .\templates\allauth\socialaccount\connections.html:9
 msgid "Account Connections"
-msgstr "اتصالات الحساب"
+msgstr "إعدادات الحساب"
 
 #: .\templates\allauth\allauth\layouts\base.html:49
 #: .\templates\allauth\mfa\authenticate.html:10
@@ -1836,7 +1878,7 @@ msgstr "جلسات"
 
 #: .\templates\allauth\base.html:16
 msgid "Account"
-msgstr "حساب"
+msgstr "حسابي"
 
 #: .\templates\allauth\base.html:19
 msgid "Please proceed to continue."
@@ -1848,7 +1890,7 @@ msgstr "من خلال الاستمرار توافق على"
 
 #: .\templates\allauth\base.html:28 .\templates\includes\footer.html:21
 msgid "Terms"
-msgstr "شروط"
+msgstr "الشروط"
 
 #: .\templates\allauth\base.html:29
 msgid "and"
@@ -1871,7 +1913,7 @@ msgstr "%(client_name)sيريد الوصول%(site_name)sحساب."
 
 #: .\templates\allauth\idp\oidc\device_authorization_code_form.html:9
 msgid "Enter Device Code"
-msgstr "أدخل رمز الجهاز"
+msgstr "أدخل رمز تسجيل الدخول"
 
 #: .\templates\allauth\idp\oidc\device_authorization_code_form.html:12
 msgid "Enter the code displayed on your device."
@@ -1879,7 +1921,7 @@ msgstr "أدخل الرمز المعروض على جهازك."
 
 #: .\templates\allauth\idp\oidc\device_authorization_confirm_form.html:9
 msgid "Confirm Device"
-msgstr "تأكيد الجهاز"
+msgstr "تأكيد الوصول"
 
 #: .\templates\allauth\idp\oidc\device_authorization_confirm_form.html:12
 #, python-format
@@ -1890,11 +1932,11 @@ msgstr "يرجى تأكيد الرمز المعروض على%(client_name)sلت�
 
 #: .\templates\allauth\idp\oidc\device_authorization_confirm_form.html:16
 msgid "Code"
-msgstr "شفرة"
+msgstr "رمز"
 
 #: .\templates\allauth\idp\oidc\device_authorization_confirm_form.html:29
 msgid "Deny"
-msgstr "ينكر"
+msgstr "رفض"
 
 #: .\templates\allauth\idp\oidc\device_authorization_confirmed.html:9
 msgid "Device Authorized"
@@ -1968,7 +2010,7 @@ msgstr "أضاف مفتاح الأمان"
 
 #: .\templates\allauth\mfa\email\webauthn_removed_message.txt:4
 msgid "A security key has been removed."
-msgstr "تمت إزالة مفتاح الأمان."
+msgstr "تم تأكيد بريدك الإلكتروني."
 
 #: .\templates\allauth\mfa\email\webauthn_removed_subject.txt:3
 msgid "Security Key Removed"
@@ -2021,20 +2063,20 @@ msgstr "لم تتم إضافة مفاتيح أمنية."
 
 #: .\templates\allauth\mfa\index.html:62
 msgid "Manage"
-msgstr "يدير"
+msgstr "إدارة رسائل البريد الإلكتروني"
 
 #: .\templates\allauth\mfa\index.html:67
 #: .\templates\allauth\mfa\webauthn\add_form.html:18
 #: .\templates\allauth\mfa\webauthn\authenticator_list.html:70
 msgid "Add"
-msgstr "يضيف"
+msgstr "العنوان"
 
 #: .\templates\allauth\mfa\index.html:77
 #: .\templates\allauth\mfa\recovery_codes\base.html:4
 #: .\templates\allauth\mfa\recovery_codes\generate.html:6
 #: .\templates\allauth\mfa\recovery_codes\index.html:6
 msgid "Recovery Codes"
-msgstr "رموز الاسترداد"
+msgstr "طلب رمز"
 
 #: .\templates\allauth\mfa\index.html:82
 #: .\templates\allauth\mfa\recovery_codes\index.html:9
@@ -2056,7 +2098,7 @@ msgstr "لم يتم إعداد رموز الاسترداد."
 
 #: .\templates\allauth\mfa\index.html:96
 msgid "View"
-msgstr "منظر"
+msgstr "عرض"
 
 #: .\templates\allauth\mfa\index.html:102
 msgid "Download"
@@ -2065,7 +2107,7 @@ msgstr "تحميل"
 #: .\templates\allauth\mfa\index.html:110
 #: .\templates\allauth\mfa\recovery_codes\generate.html:29
 msgid "Generate"
-msgstr "يولد"
+msgstr "انشاء رمز جديد"
 
 #: .\templates\allauth\mfa\messages\recovery_codes_generated.txt:2
 msgid "A new set of recovery codes has been generated."
@@ -2081,7 +2123,7 @@ msgstr "إزالتها مفتاح الأمان."
 
 #: .\templates\allauth\mfa\reauthenticate.html:6
 msgid "Enter an authenticator code:"
-msgstr "أدخل رمز المصادقة:"
+msgstr "أدخل رمز التحقق من البريد الإلكتروني"
 
 #: .\templates\allauth\mfa\recovery_codes\generate.html:9
 msgid ""
@@ -2106,7 +2148,7 @@ msgstr "تنزيل الرموز"
 
 #: .\templates\allauth\mfa\recovery_codes\index.html:30
 msgid "Generate new codes"
-msgstr "توليد رموز جديدة"
+msgstr "طلب رمز جديد"
 
 #: .\templates\allauth\mfa\totp\activate_form.html:4
 #: .\templates\allauth\mfa\totp\activate_form.html:8
@@ -2125,7 +2167,7 @@ msgstr ""
 
 #: .\templates\allauth\mfa\totp\activate_form.html:21
 msgid "Authenticator secret"
-msgstr "سر المصادقة"
+msgstr "شيفرة المصادقة"
 
 #: .\templates\allauth\mfa\totp\activate_form.html:24
 msgid ""
@@ -2178,7 +2220,7 @@ msgstr "إزالة مفتاح الأمان"
 
 #: .\templates\allauth\mfa\webauthn\authenticator_confirm_delete.html:9
 msgid "Are you sure you want to remove this security key?"
-msgstr "هل أنت متأكد أنك تريد إزالة مفتاح الأمان هذا؟"
+msgstr "هل أنت متأكد أنك تريد تسجيل الخروج؟"
 
 #: .\templates\allauth\mfa\webauthn\authenticator_list.html:18
 msgid "Key"
@@ -2190,7 +2232,7 @@ msgstr "الاستخدام"
 
 #: .\templates\allauth\mfa\webauthn\authenticator_list.html:33
 msgid "Passkey"
-msgstr "مفتاح الممر"
+msgstr "التسجيل"
 
 #: .\templates\allauth\mfa\webauthn\authenticator_list.html:37
 msgid "Security key"
@@ -2202,7 +2244,7 @@ msgstr "هذا المفتاح لا يشير إلى ما إذا كان مفتاح
 
 #: .\templates\allauth\mfa\webauthn\authenticator_list.html:41
 msgid "Unspecified"
-msgstr "غير محدد"
+msgstr "لم يتم التحقق منه"
 
 #: .\templates\allauth\mfa\webauthn\authenticator_list.html:46
 #, python-format
@@ -2216,11 +2258,11 @@ msgstr "آخر استخدام%(last_used)s"
 
 #: .\templates\allauth\mfa\webauthn\edit_form.html:7
 msgid "Edit Security Key"
-msgstr "تحرير مفتاح الأمان"
+msgstr "تعديل مفتاح الأمان"
 
 #: .\templates\allauth\mfa\webauthn\edit_form.html:18
 msgid "Save"
-msgstr "يحفظ"
+msgstr "احفظ"
 
 #: .\templates\allauth\mfa\webauthn\signup_form.html:7
 msgid "Create Passkey"
@@ -2237,7 +2279,7 @@ msgstr ""
 
 #: .\templates\allauth\mfa\webauthn\signup_form.html:21
 msgid "Create"
-msgstr "يخلق"
+msgstr "أنشأ"
 
 #: .\templates\allauth\mfa\webauthn\snippets\scripts.html:2
 msgid "This functionality requires JavaScript."
@@ -2333,7 +2375,7 @@ msgstr "تم فصل حساب الطرف الثالث."
 
 #: .\templates\allauth\socialaccount\signup.html:5
 msgid "Complete your profile"
-msgstr "أكمل ملف التعريف الخاص بك"
+msgstr "ملفك الشخصي"
 
 #: .\templates\allauth\socialaccount\signup.html:10
 #, python-format
@@ -2344,21 +2386,22 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"أنت على وشك استخدام الخاص بك%(provider_name)sحساب لتسجيل الدخول إلى%(site_name)s.\n"
-"      كخطوة أخيرة ، يرجى إكمال النموذج التالي:"
+"      أنت على وشك استخدام حسابك في %(provider_name)s لتسجيل الدخول إلى %(site_name)s.\n"
+"      كخطوة أخيرة، يرجى إكمال النموذج التالي:\n"
+"    "
 
 #: .\templates\allauth\socialaccount\signup.html:44
 msgid "Back to Sign In"
-msgstr "العودة لتسجيل الدخول"
+msgstr "تسجيل الدخول"
 
 #: .\templates\allauth\socialaccount\snippets\provider_list.html:16
 #, python-format
 msgid "Continue with %(name)s"
-msgstr "تواصل مع%(name)s"
+msgstr " الاشتراك أو تسجيل الدخول بواسطة %(name)s"
 
 #: .\templates\allauth\usersessions\messages\sessions_logged_out.txt:2
 msgid "Signed out of all other sessions."
-msgstr "وقع الخروج من جميع الجلسات الأخرى."
+msgstr "تسجيل الخروج من جميع الجلسات الأخرى."
 
 #: .\templates\allauth\usersessions\usersession_list.html:24
 msgid "Started At"
@@ -2366,7 +2409,7 @@ msgstr "بدأت في"
 
 #: .\templates\allauth\usersessions\usersession_list.html:27
 msgid "IP Address"
-msgstr "عنوان IP"
+msgstr "العنوان"
 
 #: .\templates\allauth\usersessions\usersession_list.html:30
 msgid "Browser"
@@ -2378,7 +2421,7 @@ msgstr "آخر مرة في"
 
 #: .\templates\allauth\usersessions\usersession_list.html:59
 msgid "Current"
-msgstr "حاضِر"
+msgstr "البريد الإلكتروني الحالي"
 
 #: .\templates\allauth\usersessions\usersession_list.html:72
 msgid "Sign Out Other Sessions"
@@ -2386,11 +2429,12 @@ msgstr "تسجيل الخروج من الجلسات الأخرى"
 
 #: .\templates\base.html:10 .\templates\includes\footer.html:12
 msgid "Your online flea market"
-msgstr "سوق السلع المستعملة عبر الإنترنت"
+msgstr "سوقك الحر"
 
 #: .\templates\includes\back_to_store.html:6
+#| msgid "Back to top"
 msgid "Back to My Store"
-msgstr "العودة إلى متجري"
+msgstr "العودة إلى الأعلى"
 
 #: .\templates\includes\back_to_store.html:10
 msgid "Back"
@@ -2399,15 +2443,15 @@ msgstr "خلف"
 #: .\templates\includes\footer.html:10
 #: .\templates\includes\navbar\navbar.html:15
 msgid "Flomarkt24"
-msgstr "flomarkt24"
+msgstr " فلوماركيت24 "
 
 #: .\templates\includes\footer.html:17
 msgid "Footer navigation"
-msgstr "تذييل التنقل"
+msgstr "تبديل"
 
 #: .\templates\includes\footer.html:20
 msgid "Privacy"
-msgstr "خصوصية"
+msgstr "الخصوصية"
 
 #: .\templates\includes\footer.html:38
 msgid "All rights reserved"
@@ -2443,7 +2487,7 @@ msgstr "تسجيل الدخول"
 
 #: .\templates\includes\navbar\account.html:59
 msgid "Register"
-msgstr "تسجيل"
+msgstr "إنشاء حساب جديد"
 
 #: .\templates\includes\navbar\links.html:8
 msgid "Home"
@@ -2455,7 +2499,7 @@ msgstr "لا فئات"
 
 #: .\templates\includes\navbar\navbar.html:58
 msgid "Toggle navigation"
-msgstr "تبديل الملاحة"
+msgstr "تبديل"
 
 #: .\templates\includes\navbar\search.html:5
 msgid "Search our site"
@@ -2488,3 +2532,103 @@ msgstr "ملكية"
 msgctxt "category name"
 msgid "Services"
 msgstr "خدمات"
+
+#~ msgctxt "category name"
+#~ msgid "Products"
+#~ msgstr "منتجات"
+
+#~ msgctxt "category name"
+#~ msgid "Cars"
+#~ msgstr "السيارات"
+
+#~ msgctxt "category name"
+#~ msgid "Real Estate"
+#~ msgstr "العقارات"
+
+#~ msgctxt "category name"
+#~ msgid "Hotels"
+#~ msgstr "الفنادق"
+
+#~ msgctxt "category name"
+#~ msgid "Rentals"
+#~ msgstr "الإيجارات"
+
+#~ msgctxt "category name"
+#~ msgid "Property"
+#~ msgstr "ملكية"
+
+#~ msgctxt "category name"
+#~ msgid "Services"
+#~ msgstr "خدمات"
+
+#~ msgid "Home & Tools"
+#~ msgstr "أدوات منزلية "
+
+#~ msgid "Garden & Outdoors"
+#~ msgstr "أدوات حدائق و خدمية"
+
+#~ msgid "Computers"
+#~ msgstr "أجهزة الكمبيوتر"
+
+#~ msgid "Phones & Accessories"
+#~ msgstr "الهواتف و مُكَمِّلات"
+
+#~ msgid "Fashion"
+#~ msgstr "موضة"
+
+#~ msgid "Beauty & Personal Care"
+#~ msgstr "الجمال و العناية الشخصية"
+
+#~ msgid "Health"
+#~ msgstr "صحة"
+
+#~ msgid "Sports & Outdoors"
+#~ msgstr "أدوات رياضية و ترفيهية"
+
+#~ msgid "Toys & Games"
+#~ msgstr "دمى و ألعاب"
+
+#~ msgid "Baby"
+#~ msgstr "طفل"
+
+#~ msgid "Pet Supplies"
+#~ msgstr "إمدادات الحيوانات الأليفة"
+
+#~ msgid "Music"
+#~ msgstr "موسيقى"
+
+#~ msgid "Grocery"
+#~ msgstr "خضروات"
+
+#~ msgid "Office Products"
+#~ msgstr "منتجات المكاتب"
+
+#~ msgid "Profile updated successfully"
+#~ msgstr "تم تحديث ملف التعريف بنجاح"
+
+#, python-format
+#~ msgid ""
+#~ "If you have not created an account yet, then please %(link)ssign "
+#~ "up%(end_link)s first."
+#~ msgstr ""
+#~ "إذا لم تكن قد قمت بإنشاء حساب بعد ، فمن فضلك%(link)أنشأ حساب "
+#~ "جديد%(end_link)sأولاً."
+
+#~ msgid "Sign in with a passkey"
+#~ msgstr "تسجيل الدخول مع مفتاح المرور"
+
+#~ msgid "Profile"
+#~ msgstr "الملف الشخصي"
+
+#~ msgid "Phone"
+#~ msgstr "الهاتف"
+
+#~ msgid "Date Joined"
+#~ msgstr "تاريخ الانضمام"
+
+#~ msgid "Sign up using a passkey"
+#~ msgstr "اشترك باستخدام مفتاح المرور"
+
+#, python-format
+#~ msgid "Sign In Via %(provider)s"
+#~ msgstr "تسجيل الدخول عبر%(provider)s"
