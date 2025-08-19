@@ -8,8 +8,7 @@ def catalog_nav(request):
         "catalog_quick_types": [
             ("PRODUCT", "Products"),
             ("SERVICE", "Services"),
-            ("RENTAL_ITEM", "Rentals"),
-            ("ROOM", "Hotels"),
-            ("PROPERTY", "Property"),
+            ("CAR", "Cars"),
+            ("PROPERTY", "Real Estate"),
         ],
     }

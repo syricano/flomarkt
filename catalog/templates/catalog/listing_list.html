@@ -1,5 +1,9 @@
 {% extends "base.html" %}{% load i18n %}
 {% block content %}
+
+<div class="container py-4">
+  {% include "includes/back_to_store.html" %}
+</div>
 <div class="container py-4">
   <h1 class="h4 mb-3">{% trans "Listings" %}{% if type %} · {{ type }}{% endif %}</h1>
   <div class="row g-3">
@@ -8,7 +12,7 @@
         <a class="card text-decoration-none h-100" href="{% url 'catalog:listing_detail' l.slug %}">
           {% if l.hero_image %}<img class="card-img-top" src="{{ l.hero_image.url }}" alt="">{% endif %}
           <div class="card-body">
-            <div class="small text-muted">{{ l.category.name }} · {{ l.type }}</div>
+            <div class="small text-muted">{{ l.category.name }} · {{ l.get_type_display }}</div>
             <h2 class="h6 mb-2">{{ l.title }}</h2>
             <p class="text-muted small mb-0">{{ l.teaser|default:"" }}</p>
           </div>

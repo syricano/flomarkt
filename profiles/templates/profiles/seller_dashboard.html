@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+
+<div class="container py-4">
+  <h1 class="h4 mb-3">{{ vendor.display_name }}</h1>
+  <p class="text-muted small mb-3">{% trans "Store slug" %}: {{ vendor.slug }} · {% trans "Active" %}: {{ vendor.is_active|yesno:"Yes,No" }}</p>
+  <div class="d-flex gap-2 mb-3">
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:listing_list' %}?type=PRODUCT">{% trans "View catalog" %}</a>
+    <a class="btn btn-black btn-sm" href="{% url 'catalog:seller_listing_create' %}">{% trans "Add Listing" %}</a>
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:seller_my_listings' %}">{% trans "My Listings" %}</a>
+  </div>
+  <h2 class="h6 mt-4 mb-2">{% trans "Recent listings" %}</h2>
+  <div class="row g-3">
+    {% for l in listings %}
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="small text-muted">{{ l.type }} · {{ l.category.name }}</div>
+            <div class="fw-semibold">{{ l.title }}</div>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-muted">{% trans "No listings yet." %}</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

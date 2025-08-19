@@ -10,25 +10,55 @@
           {{ raw_name|lower|title }}
         </span>
       {% endwith %}
-
     {% else %}
       {% trans 'My Account' %}
     {% endif %}
   </a>
+
   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userOptions">
     {% if request.user.is_authenticated %}
+
       {% if request.user.is_superuser %}
-        <a class="dropdown-item" href="#">{% trans 'Product Management' %}</a>
+        <a class="dropdown-item d-flex align-items-center" href="{% url 'admin:index' %}">
+          <i class="bi bi-speedometer2 me-2"></i> {% trans 'Admin' %}
+        </a>
         <hr class="dropdown-divider">
       {% endif %}
+
       <a class="dropdown-item d-flex align-items-center" href="{% url 'profiles:profile' %}">
         <i class="bi bi-person me-2"></i> {% trans 'My Profile' %}
       </a>
+
+      {% if request.user.vendor %}
+        {% if request.user.vendor.is_active %}
+          <a class="dropdown-item d-flex align-items-center" href="{% url 'profiles:seller_dashboard' %}">
+            <i class="bi bi-shop-window me-2"></i> {% trans 'My Store' %}
+          </a>
+        {% else %}
+          <a class="dropdown-item d-flex align-items-center" href="{% url 'profiles:seller_onboarding' %}">
+            <i class="bi bi-hourglass-split me-2"></i> {% trans 'Seller pending' %}
+          </a>
+        {% endif %}
+      {% else %}
+        <a class="dropdown-item d-flex align-items-center" href="{% url 'profiles:seller_onboarding' %}">
+          <i class="bi bi-bag-plus me-2"></i> {% trans 'Become a seller' %}
+        </a>
+      {% endif %}
+
       <hr class="dropdown-divider">
-      <a class="dropdown-item" href="{% url 'account_logout' %}">{% trans 'Logout' %}</a>
+      <a class="dropdown-item d-flex align-items-center" href="{% url 'account_logout' %}">
+        <i class="bi bi-box-arrow-right me-2"></i> {% trans 'Logout' %}
+      </a>
+
     {% else %}
-      <a class="dropdown-item" href="{% url 'account_login' %}">{% trans 'Login' %}</a>
-      <a class="dropdown-item" href="{% url 'account_signup' %}">{% trans 'Register' %}</a>
+
+      <a class="dropdown-item d-flex align-items-center" href="{% url 'account_login' %}">
+        <i class="bi bi-box-arrow-in-right me-2"></i> {% trans 'Login' %}
+      </a>
+      <a class="dropdown-item d-flex align-items-center" href="{% url 'account_signup' %}">
+        <i class="bi bi-person-plus me-2"></i> {% trans 'Register' %}
+      </a>
+
     {% endif %}
   </div>
 </div>

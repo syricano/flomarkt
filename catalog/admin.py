@@ -1,10 +1,9 @@
-# catalog/admin.py
 from django.contrib import admin
 from .models import (
     Category, Listing,
-    Product, ProductVariant, Inventory,
+    Product, ProductVariant, Inventory, ProductGroup,
     Service, ServicePackage, ServiceRequest,
-    Room, RentalItem, Property, Booking
+    Car, Property, Booking
 )
 
 @admin.register(Category)
@@ -16,8 +15,8 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Listing)
 class ListingAdmin(admin.ModelAdmin):
-    list_display = ("title", "type", "vendor", "category", "is_active", "created_at")
-    list_filter = ("type", "is_active", "category")
+    list_display = ("title", "type", "vendor", "category", "status", "is_active", "created_at")
+    list_filter = ("type", "status", "is_active", "category")
     search_fields = ("title", "vendor__display_name", "slug")
     autocomplete_fields = ("category", "vendor")
     readonly_fields = ("created_at",)
@@ -33,6 +32,17 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ("name", "sku", "vendor__display_name")
     list_filter = ("vendor",)
     inlines = (ProductVariantInline,)
+
+@admin.register(ProductGroup)
+class ProductGroupAdmin(admin.ModelAdmin):
+    list_display = ("title", "vendor", "product_count", "created_at")
+    search_fields = ("title", "vendor__display_name")
+    list_filter = ("vendor",)
+    filter_horizontal = ("products",)
+
+    @admin.display(description="Products")
+    def product_count(self, obj):
+        return obj.products.count()
 
 @admin.register(ProductVariant)
 class ProductVariantAdmin(admin.ModelAdmin):
@@ -63,22 +73,16 @@ class ServiceRequestAdmin(admin.ModelAdmin):
     list_filter = ("status", "created_at")
     search_fields = ("service__name", "buyer__username")
 
-@admin.register(Room)
-class RoomAdmin(admin.ModelAdmin):
-    list_display = ("name", "vendor", "location", "capacity", "nightly_price", "is_active")
-    list_filter = ("is_active", "vendor", "capacity")
-    search_fields = ("name", "location", "vendor__display_name")
-
-@admin.register(RentalItem)
-class RentalItemAdmin(admin.ModelAdmin):
-    list_display = ("name", "vendor", "daily_price", "deposit", "quantity", "is_active")
-    list_filter = ("is_active", "vendor")
-    search_fields = ("name", "vendor__display_name", "location")
+@admin.register(Car)
+class CarAdmin(admin.ModelAdmin):
+    list_display = ("make", "model", "year", "vendor", "price", "is_active")
+    list_filter = ("is_active", "vendor", "make", "fuel_type", "transmission", "condition")
+    search_fields = ("make", "model", "vin", "vendor__display_name")
 
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
-    list_display = ("title", "vendor", "city", "is_for_rent", "monthly_rent", "sale_price", "is_active")
-    list_filter = ("city", "is_for_rent", "is_active", "vendor")
+    list_display = ("title", "vendor", "city", "property_type", "purpose", "monthly_rent", "sale_price", "is_active")
+    list_filter = ("city", "property_type", "purpose", "is_active", "vendor")
     search_fields = ("title", "city", "vendor__display_name")
 
 @admin.register(Booking)

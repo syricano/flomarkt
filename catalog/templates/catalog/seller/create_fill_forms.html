@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<div class="container py-4">
+  {% include "includes/back_to_store.html" %}
+
+  <h1 class="h5 mb-3">{% trans "Create Listing" %} · {{ type }}</h1>
+
+  <div class="alert alert-secondary py-2 mb-3">
+    <strong>{% trans "Category" %}:</strong> {{ category.name }}
+  </div>
+
+  <form method="post" class="card p-3">
+    {% csrf_token %}
+    <input type="hidden" name="type" value="{{ type }}">
+
+    <div class="row g-3">
+      <div class="col-12 col-lg-8">
+        <div class="card shadow-sm mb-3">
+          <div class="card-header"><strong>{% trans "Listing details" %}</strong></div>
+          <div class="card-body">
+            <div class="row g-2">
+              <div class="col-12 col-md-8">
+                {{ base.title.label_tag }}{{ base.title }}
+              </div>
+              <div class="col-12 col-md-4">
+                {{ base.currency.label_tag }}{{ base.currency }}
+              </div>
+              <div class="col-12">
+                {{ base.short_description.label_tag }}{{ base.short_description }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% if type == "PRODUCT" %}
+        <div class="card shadow-sm" id="products-card">
+          <div class="card-header">
+            <strong>{% trans "Products" %}</strong>
+          </div>
+          <div class="card-body">
+            {{ pformset.management_form }}
+            <div id="product-cards" class="d-grid gap-3">
+              {% for f in pformset.forms %}
+              <div class="card border">
+                <div class="card-body">
+                  {{ f.DELETE }}
+                  <div class="row g-2">
+                    <div class="col-md-5">
+                      <label class="form-label">{{ f.name.label }}</label>
+                      {{ f.name }}
+                      {% if f.name.errors %}<div class="text-danger small">{{ f.name.errors|join:", " }}</div>{% endif %}
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label">{{ f.sku.label }}</label>
+                      {{ f.sku }}
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label">{{ f.price.label }}</label>
+                      {{ f.price }}
+                    </div>
+                    <div class="col-md-1">
+                      <label class="form-label">{{ f.color.label }}</label>
+                      {{ f.color }}
+                    </div>
+                    <div class="col-md-1">
+                      <label class="form-label">{{ f.size.label }}</label>
+                      {{ f.size }}
+                    </div>
+                  </div>
+                  <div class="mt-2 text-end">
+                    <button type="button" class="btn btn-outline-danger btn-sm js-remove-product">{% trans "Remove" %}</button>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            <div class="mt-3 text-end">
+              <button type="button" class="btn btn-sm btn-outline-secondary js-add-product">+ {% trans "Add product" %}</button>
+            </div>
+
+            <!-- Templates (not rendered by browser) -->
+            <template id="tpl-product-card">
+              <div class="card border">
+                <div class="card-body">
+                  __DELETE__
+                  <div class="row g-2">
+                    <div class="col-md-5"><label class="form-label">{% trans "Product name" %}</label> __NAME__</div>
+                    <div class="col-md-3"><label class="form-label">{% trans "Item code (optional)" %}</label> __SKU__</div>
+                    <div class="col-md-2"><label class="form-label">{% trans "Price" %}</label> __PRICE__</div>
+                    <div class="col-md-1"><label class="form-label">{% trans "Color" %}</label> __COLOR__</div>
+                    <div class="col-md-1"><label class="form-label">{% trans "Size" %}</label> __SIZE__</div>
+                  </div>
+                  <div class="mt-2 text-end">
+                    <button type="button" class="btn btn-outline-danger btn-sm js-remove-product">{% trans "Remove" %}</button>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <template id="tpl-empty-fields">
+              {% with ef=pformset.empty_form %}
+                {{ ef.DELETE }}
+                {{ ef.name }}{{ ef.sku }}{{ ef.price }}{{ ef.color }}{{ ef.size }}
+              {% endwith %}
+            </template>
+          </div>
+        </div>
+        {% else %}
+        <div class="card shadow-sm">
+          <div class="card-header"><strong>{% trans "Specifics" %}</strong></div>
+          <div class="card-body">
+            {{ subform.as_p }}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <button class="btn btn-black w-100">{% trans "Save draft and review" %}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/catalog_products.js' %}"></script>
+{% endblock %}

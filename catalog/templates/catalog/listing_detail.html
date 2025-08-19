@@ -1,12 +1,90 @@
 {% extends "base.html" %}{% load i18n %}
 {% block content %}
 <div class="container py-4">
+  {% include "includes/back_to_store.html" %}
+</div>
+
+<div class="container py-4">
   <nav class="mb-2"><a href="{% url 'catalog:listing_list' %}">&larr; {% trans "Back to listings" %}</a></nav>
   <h1 class="h4">{{ listing.title }}</h1>
-  <div class="text-muted small mb-2">
-    {{ listing.category.name }} · {{ listing.type }} · {{ listing.vendor.display_name }}
+  <div class="text-muted small mb-3">
+    {{ listing.category.name }} · {{ listing.get_type_display }} · {{ listing.vendor.display_name }}
   </div>
-  {% if listing.hero_image %}<img class="img-fluid mb-3" src="{{ listing.hero_image.url }}" alt="">{% endif %}
+
+  {# Media slider: prefers content_object images/media, falls back to hero_image #}
+  {% with obj=listing.content_object %}
+    {% if obj.images or obj.media or listing.hero_image %}
+      <div id="mediaCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          {% if obj.images %}
+            {% for img in obj.images %}
+              <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{ img }}" class="d-block w-100" alt="">
+              </div>
+            {% endfor %}
+          {% elif obj.media %}
+            {% for img in obj.media %}
+              <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{ img }}" class="d-block w-100" alt="">
+              </div>
+            {% endfor %}
+          {% else %}
+            <div class="carousel-item active">
+              <img src="{{ listing.hero_image.url }}" class="d-block w-100" alt="">
+            </div>
+          {% endif %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">{% trans "Previous" %}</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mediaCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">{% trans "Next" %}</span>
+        </button>
+      </div>
+    {% endif %}
+  {% endwith %}
+
   <p>{{ listing.teaser }}</p>
+
+  {# Simple attributes for CAR / PROPERTY #}
+  {% with obj=listing.content_object %}
+    {% if listing.type == "CAR" %}
+      <div class="card mt-3">
+        <div class="card-body">
+          <div class="row g-2">
+            <div class="col-6"><strong>{% trans "Make" %}:</strong> {{ obj.make }}</div>
+            <div class="col-6"><strong>{% trans "Model" %}:</strong> {{ obj.model }}</div>
+            <div class="col-6"><strong>{% trans "Year" %}:</strong> {{ obj.year }}</div>
+            <div class="col-6"><strong>{% trans "Mileage (km)" %}:</strong> {{ obj.mileage_km }}</div>
+            <div class="col-6"><strong>{% trans "Transmission" %}:</strong> {{ obj.get_transmission_display }}</div>
+            <div class="col-6"><strong>{% trans "Fuel type" %}:</strong> {{ obj.get_fuel_type_display }}</div>
+            <div class="col-6"><strong>{% trans "Price" %}:</strong> {{ listing.currency }} {{ obj.price }}</div>
+            <div class="col-6"><strong>{% trans "Negotiable" %}:</strong> {{ obj.negotiable|yesno:_("Yes,No") }}</div>
+          </div>
+          {% if obj.description %}<p class="mt-3 mb-0">{{ obj.description }}</p>{% endif %}
+        </div>
+      </div>
+    {% elif listing.type == "PROPERTY" %}
+      <div class="card mt-3">
+        <div class="card-body">
+          <div class="row g-2">
+            <div class="col-6"><strong>{% trans "Type" %}:</strong> {{ obj.get_property_type_display }}</div>
+            <div class="col-6"><strong>{% trans "Purpose" %}:</strong> {{ obj.get_purpose_display }}</div>
+            <div class="col-6"><strong>{% trans "Bedrooms" %}:</strong> {{ obj.bedrooms }}</div>
+            <div class="col-6"><strong>{% trans "Bathrooms" %}:</strong> {{ obj.bathrooms }}</div>
+            <div class="col-6"><strong>{% trans "Area (m²)" %}:</strong> {{ obj.area_sqm }}</div>
+            <div class="col-6">
+              <strong>{% trans "Price" %}:</strong>
+              {% if obj.purpose == "RENT" %}{{ listing.currency }} {{ obj.monthly_rent }} / {% trans "month" %}
+              {% else %}{{ listing.currency }} {{ obj.sale_price }}{% endif %}
+            </div>
+            <div class="col-12"><strong>{% trans "Address" %}:</strong> {{ obj.address }}, {{ obj.postal_code }} {{ obj.city }}</div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endwith %}
 </div>
 {% endblock %}

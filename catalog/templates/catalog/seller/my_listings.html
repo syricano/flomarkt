@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<div class="container py-4">
+  {% include "includes/back_to_store.html" %}
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h1 class="h5 m-0">{% trans "My Listings" %}</h1>
+    <a class="btn btn-black btn-sm" href="{% url 'catalog:seller_listing_create' %}">{% trans "Add Listing" %}</a>
+  </div>
+  <div class="row g-3">
+    {% for l in listings %}
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="small text-muted">{{ l.category.name }} · {{ l.type }} · {{ l.status }}</div>
+            <div class="fw-semibold">{{ l.title }}</div>
+          </div>
+          <div class="card-footer d-flex gap-2">
+            <a class="btn btn-outline-secondary btn-sm" href="{% url 'catalog:seller_listing_review' l.pk %}">{% trans "Review" %}</a>
+            {% if l.status == "REJECTED" %}<span class="text-danger small ms-auto">{{ l.review_notes }}</span>{% endif %}
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-muted">{% trans "No listings yet." %}</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% load i18n %}
+{% if request.user.is_authenticated and request.user.vendor %}
+  <div class="mb-3">
+    {% if request.user.vendor.is_active %}
+      <a href="{% url 'profiles:seller_dashboard' %}" class="btn btn-outline-secondary btn-sm">
+        &laquo; {% trans "Back to My Store" %}
+      </a>
+    {% else %}
+      <a href="{% url 'profiles:seller_onboarding' %}" class="btn btn-outline-secondary btn-sm">
+        &laquo; {% trans "Back" %}
+      </a>
+    {% endif %}
+  </div>
+{% endif %}

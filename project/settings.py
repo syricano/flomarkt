@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     'catalog',
+    'django_countries',
 ]
 
 SITE_ID = int(os.environ.get("SITE_ID", 2))

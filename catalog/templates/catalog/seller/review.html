@@ -1,0 +1,19 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<div class="container py-4">
+  {% include "includes/back_to_store.html" %}
+  <h1 class="h5 mb-3">{% trans "Review Listing" %}</h1>
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="small text-muted">{{ listing.category.name }} · {{ listing.type }} · {{ listing.status }}</div>
+      <h2 class="h6">{{ listing.title }}</h2>
+      <p class="mb-0">{{ listing.teaser }}</p>
+    </div>
+  </div>
+  <form method="post" class="d-flex gap-2">
+    {% csrf_token %}
+    <button name="action" value="edit" class="btn btn-outline-secondary">&laquo; {% trans "Edit" %}</button>
+    <button name="action" value="submit" class="btn btn-black">{% trans "Submit for review" %}</button>
+  </form>
+</div>
+{% endblock %}
